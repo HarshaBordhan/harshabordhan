@@ -1,3 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fontPrimary: #002333;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
+  --gradient-tertiary: linear-gradient(to top left, #faaa16e8, #ff0000ed);
+  --gradient-transparent: linear-gradient(45deg, #000000c2, #00000008);
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +25,108 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.cursor {
+  @apply cursor-pointer;
+}
+
+.nav-items {
+  @apply w-1/2 h-16 list-none flex justify-center items-center;
+}
+
+.nav-lists {
+  @apply w-full h-14 list-none px-2 flex justify-start items-center;
+}
+
+.nav-lists:hover {
+  @apply bg-slate-100 dark:bg-zinc-800;
+}
+
+.navbar-links:hover {
+  @apply transition-all text-gray-600 dark:text-gray-400;
+}
+
+.activeNav {
+  @apply border-b border-black font-semibold;
+}
+
+.color {
+  @apply w-2.5 h-2.5 mx-1.5 border-b border-slate-50 rounded-md cursor-pointer;
+}
+
+.color:hover {
+  @apply border-2 border-white /*border-black*/;
+}
+
+.homeDiv {
+  @apply flex flex-col py-5 px-7;
+}
+
+.fst {
+  @apply col-span-full justify-evenly;
+}
+
+@layer utilities {
+  /** nav component **/
+  .nav {
+    border-color: #f0f2f5;
+    z-index: 1;
+  }
+
+  /* colors */
+  .tooltip {
+    height: 30px;
+    left: calc(84% - 64px);
+    background-color: var(--fontPrimary);
+    color: rgb(155, 155, 155);
+  }
+
+  .colors {
+    left: calc(80% - 52px);
+    bottom: calc(15% - 0px);
+  }
+
+  .colorTrans {
+    background-image: var(--gradient-transparent);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .pageContainer {
+      width: 70%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .pageContainer {
+      width: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .pageContainer {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .leftside {
+      /* opacity: 0; */
+      display: none;
+    }
+
+    .checkbtn {
+      display: block;
+    }
+
+    .rightside {
+      margin-right: 1rem;
+    }
+  }
+
+  @media (min-width: 550px) {
+    .otherNav {
+      display: none;
+    }
+  }
 }
