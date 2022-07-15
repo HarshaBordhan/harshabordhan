@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      md: { max: '769px' },
+      // => @media (max-width: 639px) { ... },
+    },
   },
   plugins: [],
 };
