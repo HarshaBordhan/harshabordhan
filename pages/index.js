@@ -2,28 +2,36 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SHlogo from '../src/img/pngegg(58).png';
 import RED from '../src/img/FEh99DyXsAI0cCm.png';
-import Tposter from '../src/img/One_Piece_Film_RED_teaser_poster.jpg';
-import Vposter from '../src/img/One_Piece_Film_Red_Visual_Poster.jpg';
-import { useState } from 'react';
-import { Fade } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
+import { useEffect, useState, useRef } from 'react';
 import React from 'react';
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout/Layout';
+import Header from '../components/Layout/Header';
+import Footer from '../components/Layout/Footer';
 
 export default function Home() {
   const [colors, setColor] = useState('theme-current');
+  const [index, setIndex] = useState(0);
 
-  const images = [Tposter, Vposter];
-  const zoomInProperties = {
-    // indicators: false,
-    // scale: 1,
-    arrows: false,
-    duration: 7000,
-    transitionDuration: 500,
-    infinite: true,
+  const images = ['/RED(TeaserPoster).jpg', '/Red(VisualPoster).jpg'];
+
+  const change = count => {
+    if (count === images.length) return (count = 0);
+    // return (count = (count + 1) % images.length);
+    if (count < 0) return (count = images.length - 1);
+    return count;
+    // setIndex(count);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(count => change(count + 1));
+      // animRef.current.classList.add('fade-anim');
+    }, 6000);
+
+    return () => clearInterval(interval);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Layout>
@@ -41,11 +49,11 @@ export default function Home() {
           </h3>
           <p className="base font-normal mb-1.5 text-gray-600 dark:text-gray-400">
             Not have enough experience yet. No real-world project but gladly
-            looking forward for it.
+            looking forward to it.
           </p>
 
           <p className="base font-normal mb-1.5 text-gray-600 dark:text-gray-400">
-            Recently started working at a creative agency,
+            Recently started working in a creative agency,
             <Link href="https://eetpixel.com/">
               <a className="underline font-semibold pl-1" target="_blank">
                 eetpixel
@@ -79,7 +87,7 @@ export default function Home() {
           </p>
           <p className="mb-1.5">
             You can check them out on my
-            <Link href="/dashboard">
+            <Link href="/blog">
               <a className="underline font-semibold px-1">Blog</a>
             </Link>
             page when the building construction is finished.
@@ -119,22 +127,14 @@ export default function Home() {
           <Image src={RED} alt="OP film Logo" />
         </div>
         <div className="fifth homeDiv col-start-2 col-end-3">
-          <Fade {...zoomInProperties}>
-            {images.map((each, index) => (
-              <div
-                key={index}
-                className="flex flex-row justify-center items-center w-full h-full"
-              >
-                <Image
-                  className=""
-                  src={each}
-                  alt="OP Poster"
-                  width={265}
-                  height={376}
-                />
-              </div>
-            ))}
-          </Fade>
+          <div className="flex flex-row justify-center items-center w-full h-full">
+            <Image
+              src={images[index]}
+              alt="OP Poster"
+              width={265}
+              height={376}
+            />
+          </div>
         </div>
       </main>
       <Footer />

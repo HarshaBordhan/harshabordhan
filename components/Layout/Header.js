@@ -13,17 +13,17 @@ export default function Header({ color, colorTheme }) {
   const router = useRouter();
 
   useEffect(() => {
-    const currentColor = localStorage.getItem('theme-color');
-    if (currentColor) {
-      color(currentColor);
-    }
+    // const currentColor = localStorage.getItem('theme-color');
+    // if (currentColor) {
+    //   color(currentColor);
+    // }
     setMounted(true);
   }, [color]);
   if (!mounted) return null;
 
   const handleClick = theme => {
     color(theme);
-    localStorage.setItem('theme-color', theme);
+    // localStorage.setItem('theme-color', theme);
   };
 
   return (

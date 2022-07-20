@@ -147,6 +147,20 @@ a {
     background-image: var(--gradient-transparent);
   }
 
+  /* .fade-anim {
+    animation: fadeAnime 0.5s ease-out;
+    
+  }
+
+  @keyframes fadeAnime {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  } */
+
   @media only screen and (max-width: 1024px) {
     .pageContainer {
       width: 70%;

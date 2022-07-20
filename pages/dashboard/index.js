@@ -1,6 +1,6 @@
-// import Layout from '../../components/Layout';
-// import Header from '../../components/Header';
-// import Footer from '../../components/Footer';
+// import Layout from '../../components/Layout/Layout';
+// import Header from '../../components/Layout/Header';
+// import Footer from '../../components/Layout/Footer';
 // import { useState } from 'react';
 import styles from '../../styles/Modal.module.css';
 

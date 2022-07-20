@@ -1,10 +1,10 @@
 // import '../styles/globals.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import Twitter from '../src/img/twitter-svgrepo-com(1).svg';
-import Facebook from '../src/img/facebook-svgrepo-com(1).svg';
-import Github from '../src/img/github-svgrepo-com.svg';
-import Email from '../src/img/gmail-svgrepo-com.svg';
+import Twitter from '../../src/img/twitter-svgrepo-com(1).svg';
+import Facebook from '../../src/img/facebook-svgrepo-com(1).svg';
+import Github from '../../src/img/github-svgrepo-com.svg';
+import Email from '../../src/img/gmail-svgrepo-com.svg';
 
 export default function Footer() {
   return (
