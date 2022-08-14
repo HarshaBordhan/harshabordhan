@@ -246,7 +246,7 @@ a {
     .colorsdiv {
       padding-top: 0px;
       height: auto;
-      left: calc(50% - 72px);
+      left: calc(45% - 72px);
     }
 
     .colorsbar {
@@ -257,6 +257,20 @@ a {
     .rotation {
       /* transition: 0.2s all ease-out; */
       transform: rotate(90deg);
+    }
+
+    .footer-content {
+      min-height: 240px;
+      flex-direction: column-reverse;
+    }
+
+    .first-content {
+      width: 100%;
+    }
+
+    .second-content {
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 

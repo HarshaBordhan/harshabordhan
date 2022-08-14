@@ -10,8 +10,8 @@ import Checked from '../../src/img/checked.png';
 export default function Footer() {
   return (
     <footer className="footer homeDiv border-t dark:border-zinc-800">
-      <div className="h-auto flex justify-between">
-        <div className="flex w-1/2 flex-col">
+      <div className="footer-content h-auto flex justify-between">
+        <div className="first-content flex w-1/2 flex-col">
           <h3 className="mb-8 text-2xl font-medium text-black dark:text-white">
             Contact
           </h3>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
           <p className="">Just knock me...</p>
         </div>
-        <div className="flex w-1/2 justify-end items-start">
+        <div className="second-content flex w-1/2 justify-end items-start">
           <span className="w-4 h-4 mt-2 mr-2 flex items-center">
             <Image src={Checked} alt="Check" width={22} height={22} />
           </span>{' '}
