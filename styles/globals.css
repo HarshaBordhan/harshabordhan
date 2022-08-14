@@ -11,12 +11,29 @@
   --gradient-transparent: linear-gradient(45deg, #a7a7a7d6, #626262a6);
 }
 
+/*
+color:
+text-gray-700 dark:text-gray-200
+text-gray-600 dark:text-gray-300
+text-gray-500 dark:text-gray-400
+*/
+
+/* defalt color and size and transition */
+/* 
+color: rgb(55, 65, 81) dark:rgb(229, 231, 235) or, text-gray-700 dark:text-gray-200 
+font-size: text-base
+transition: 0.2s all ease-out; {tailwindcss => (duration-200 ease-out)}
+*/
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: 'Proxima Nova'; */
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif;
 }
 
 a {
@@ -45,7 +62,7 @@ a {
 }
 
 .navbar-links:hover {
-  @apply transition-all text-gray-600 dark:text-gray-300;
+  @apply duration-200 ease-out text-gray-600 dark:text-gray-300; /*transition*/
 }
 
 .activeNav {
@@ -53,7 +70,7 @@ a {
 }
 
 .color {
-  @apply w-3 h-3 mx-1.5 border-b border-slate-50 rounded-md cursor-pointer md:w-3.5 md:h-3.5;
+  @apply w-3 h-3 mx-1.5 border-b border-slate-50 rounded-md cursor-pointer md:w-4 md:h-3.5;
 }
 
 .color:hover {
@@ -69,33 +86,42 @@ a {
 }
 
 .homeDiv {
-  @apply flex flex-col py-5 px-7;
+  @apply flex flex-col py-8 px-9;
 }
 
 .fst {
   @apply col-span-full justify-evenly;
 }
 
+.text-color {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.blog {
+  @apply hover:border-b border-gray-200 dark:border-gray-600;
+}
+
 @layer utilities {
+  /** global **/
+
   /** nav component **/
   .nav {
     border-color: #f0f2f5;
-    z-index: 1;
+    /* z-index: 1; */
   }
 
   /* colors */
-  .tooltip {
-    height: 30px;
-    top: calc(1% - 2px);
-    left: calc(80% - 56px);
-    /* background-color: var(--fontPrimary); */
-    color: rgb(155, 155, 155);
-    /* display: none; */
+  .rotation {
+    transition: 0.2s all ease-out;
+    /* hover:scale-95 transition-all*/
   }
 
-  .colors {
+  /* .rotation:hover {
+    transform: scale(0.95);
+  } */ /* can do with onMouseOvers */
+
+  .colorsdiv {
     left: calc(78% - 60px);
-    bottom: calc(94% - 5px);
   }
 
   .theme-primary {
@@ -126,7 +152,7 @@ a {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 3px;
+    left: 1px;
     height: 100%;
     width: 99%;
     z-index: -1;
@@ -147,19 +173,38 @@ a {
     background-image: var(--gradient-transparent);
   }
 
-  /* .fade-anim {
-    animation: fadeAnime 0.5s ease-out;
-    
+  /*** Blog */
+  .post-title {
+    min-width: 450px;
   }
 
-  @keyframes fadeAnime {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  } */
+  .post-time {
+    min-width: 148px;
+  }
+
+  .post-items {
+    transition: 0.2s all ease-out;
+    text-decoration: none;
+    border-bottom: none !important;
+    opacity: 0.6;
+  }
+
+  .post-items:hover {
+    opacity: 100;
+  }
+
+  .images {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 20px;
+    row-gap: 20px;
+  }
+
+  .w-320 {
+    width: 320px;
+  }
 
   @media only screen and (max-width: 1024px) {
     .pageContainer {
@@ -198,14 +243,20 @@ a {
       margin-right: 1rem;
     }
 
-    .tooltip {
-      top: calc(1% - 8px);
-      left: calc(80% - 64px);
+    .colorsdiv {
+      padding-top: 0px;
+      height: auto;
+      left: calc(58% - 72px);
     }
 
-    .colors {
-      left: calc(70% - 58px);
-      bottom: calc(96% - 10px);
+    .colorsbar {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    .rotation {
+      /* transition: 0.2s all ease-out; */
+      transform: rotate(90deg);
     }
   }
 

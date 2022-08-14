@@ -5,68 +5,86 @@ import Twitter from '../../src/img/twitter-svgrepo-com(1).svg';
 import Facebook from '../../src/img/facebook-svgrepo-com(1).svg';
 import Github from '../../src/img/github-svgrepo-com.svg';
 import Email from '../../src/img/gmail-svgrepo-com.svg';
+import Checked from '../../src/img/checked.png';
 
 export default function Footer() {
   return (
-    <footer className="footer border-t dark:border-zinc-800">
-      <div className="sixth flex flex-col h-32 items-center p-5">
-        <h3 className="mb-6 text-2xl">Contact</h3>
-        {/* <p>You can catch up with me</p> */}
-        <div className="contacts w-52 flex flex-row justify-between">
-          <Link href="https://twitter.com/ChakmaHarsha">
-            <a target="_blank">
-              <Image
-                className="cursor dark:invert sepia saturate-0 hue-rotate-60
+    <footer className="footer homeDiv border-t dark:border-zinc-800">
+      <div className="h-auto flex justify-between">
+        <div className="flex w-1/2 flex-col">
+          <h3 className="mb-8 text-2xl font-medium text-black dark:text-white">
+            Contact
+          </h3>
+          <p className="mb-4">You can catch up with me and find me on__</p>
+          <div className="contacts mb-4 w-40 flex flex-row justify-between">
+            <Link href="https://twitter.com/ChakmaHarsha">
+              <a target="_blank" title="Twitter">
+                <Image
+                  className="cursor dark:invert sepia saturate-0 hue-rotate-60
                     brightness-100 contrast-100;"
-                src={Twitter}
-                alt="Contact Logo"
-                width={24}
-                height={24}
-              />
-            </a>
-          </Link>
-          <Link href="https://web.facebook.com/people/Harsha-Bordhan-Changma/100008888252198/">
-            <a target="_blank">
-              <Image
-                className="cursor dark:invert sepia saturate-0 hue-rotate-60
+                  src={Twitter}
+                  alt="Contact Logo"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </Link>
+            <Link href="https://web.facebook.com/people/Harsha-Bordhan-Changma/100008888252198/">
+              <a target="_blank" title="Facebook">
+                <Image
+                  className="cursor dark:invert sepia saturate-0 hue-rotate-60
                     brightness-100 contrast-100;"
-                src={Facebook}
-                alt="Contact Logo"
-                width={24}
-                height={24}
-              />
-            </a>
-          </Link>
+                  src={Facebook}
+                  alt="Contact Logo"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </Link>
 
-          <Link href="https://github.com/HarshaBordhan">
-            <a target="_blank">
-              <Image
-                className="cursor dark:invert sepia saturate-0 hue-rotate-60
+            <Link href="https://github.com/HarshaBordhan">
+              <a target="_blank" title="Github">
+                <Image
+                  className="cursor dark:invert sepia saturate-0 hue-rotate-60
                     brightness-100 contrast-100;"
-                src={Github}
-                alt="Contact Logo"
-                width={24}
-                height={24}
-              />
-            </a>
-          </Link>
-          <Link href="mailto: harshabordhanc@gmail.com">
-            <a target="_blank">
-              <Image
-                className="cursor dark:invert sepia saturate-0 hue-rotate-60
+                  src={Github}
+                  alt="Contact Logo"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </Link>
+            <Link href="mailto: harshabordhanc@gmail.com">
+              <a target="_blank" title="Mail">
+                <Image
+                  className="cursor dark:invert sepia saturate-0 hue-rotate-60
                     brightness-100 contrast-100;"
-                src={Email}
-                alt="Contact Logo"
-                width={24}
-                height={24}
-              />
-            </a>
-          </Link>
+                  src={Email}
+                  alt="Contact Logo"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </Link>
+          </div>
+          <p className="">Just knock me...</p>
+        </div>
+        <div className="flex items-start">
+          <span className="w-4 h-4 mt-2 mr-2 flex items-center">
+            <Image src={Checked} alt="Check" width={22} height={22} />
+          </span>{' '}
+          <div className="flex mt-1">
+            <p>No Error</p>
+            <span className="mx-1.5">-</span>
+            <p className="text-color">Checked</p>
+          </div>
         </div>
       </div>
-      <p className="h-16 text-center py-4 text-gray-600 dark:text-gray-400">
-        Built on my own - &copy; 2022
-      </p>
+
+      <div className="flex mt-10 justify-between">
+        <p className="text-center text-color">Built on my own - &copy; 2022</p>
+        <p className="text-center text-color">@harshabordhan</p>
+      </div>
     </footer>
   );
 }

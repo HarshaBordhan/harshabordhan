@@ -15,7 +15,7 @@ export default function Dashboard() {
       </Layout>
         */}
       <div className={styles.modal}>
-        <h1>Building </h1>
+        <h1>Currently Building </h1>
       </div>
       <div className={styles.overlay}></div>
     </>
