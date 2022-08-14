@@ -49,10 +49,10 @@ export default function Home() {
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
-      <main className="home px-0.5 py-7 grid grid-cols-2 auto-rows-auto relative">
+      <main className="home px-0.5 py-7 grid grid-cols-2 auto-rows-auto">
         <div className="first homeDiv fst">
           <h2 className="text-4xl font-medium mb-2 text-black dark:text-white z-10 md:text-3xl">
-            <span className={`highlight whitespace-nowrap`} id={`${colors}`}>
+            <span className={`highlight`} id={`${colors}`}>
               Harsha Bordhan Chakma
             </span>
           </h2>

@@ -113,9 +113,10 @@ export default function Header({ color, colorTheme }) {
             </ul>
           </label>
           <div className="rightside w-1/6 flex justify-between items-center mr-10">
-            <div className="colorsbar" title="Choose Highlight Color">
+            <div className="colorsbar">
               <span
                 className="cursor"
+                title="Choose Highlight Color"
                 onClick={() => {
                   // const target = e.target;
                   // if (target) setIsShow(!isShow);

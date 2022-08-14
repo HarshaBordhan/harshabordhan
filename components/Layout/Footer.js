@@ -69,11 +69,11 @@ export default function Footer() {
           </div>
           <p className="">Just knock me...</p>
         </div>
-        <div className="flex items-start">
+        <div className="flex w-1/2 justify-end items-start">
           <span className="w-4 h-4 mt-2 mr-2 flex items-center">
             <Image src={Checked} alt="Check" width={22} height={22} />
           </span>{' '}
-          <div className="flex mt-1">
+          <div className="flex justify-between items-center mt-1">
             <p>No Error</p>
             <span className="mx-1.5">-</span>
             <p className="text-color">Checked</p>
