@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
-      <main className="home px-0.5 py-7 grid grid-cols-2 auto-rows-auto">
+      <main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto">
         <div className="first homeDiv fst">
           <h2 className="text-4xl font-medium mb-2 text-black dark:text-white z-10 md:text-3xl sm:text-2xl">
             <span className={`highlight whitespace-nowrap`} id={`${colors}`}>
@@ -76,7 +76,7 @@ export default function Home() {
           </p>
         </div>
         <div className="second homeDiv fst">
-          <h3 className="text-2xl font-medium mb-7 text-black dark:text-white">
+          <h3 className="text-2xl font-semibold mb-7 text-black dark:text-white">
             Blog Posts
           </h3>
           <div className="flex flex-col">
@@ -134,7 +134,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="third homeDiv fst">
-          <h3 className="text-2xl font-medium mb-10 text-black dark:text-white">
+          <h3 className="text-2xl font-semibold mb-10 text-black dark:text-white">
             Experience
           </h3>
           <p className="mb-2 z-10">
@@ -168,7 +168,7 @@ export default function Home() {
           </p>
         </div>
         <div className="fourth homeDiv fst">
-          <h3 className="text-2xl font-medium mb-10 text-black dark:text-white">
+          <h3 className="text-2xl font-semibold mb-10 text-black dark:text-white">
             Other Activities
           </h3>
           <p className="mb-2">

@@ -9,10 +9,10 @@ import Checked from '../../src/img/checked.png';
 
 export default function Footer() {
   return (
-    <footer className="footer homeDiv border-t dark:border-zinc-800">
+    <footer className="footer flex flex-col px-9 py-3.5 border-t dark:border-zinc-800">
       <div className="footer-content h-auto flex justify-between">
         <div className="first-content flex w-1/2 flex-col">
-          <h3 className="mb-8 text-2xl font-medium text-black dark:text-white">
+          <h3 className="mb-8 text-2xl font-semibold text-black dark:text-white">
             Contact
           </h3>
           <p className="mb-4">You can catch up with me and find me on__</p>
@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex mt-10 justify-between">
+      <div className="flex mt-10 mb-5 justify-between items-center">
         <p className="text-center text-color">Built on my own - &copy; 2022</p>
         <p className="text-center text-color">@harshabordhan</p>
       </div>

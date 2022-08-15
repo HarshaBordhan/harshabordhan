@@ -29,8 +29,8 @@ export default function Header({ color, colorTheme }) {
 
   return (
     <>
-      <nav>
-        <div className="nav flex justify-between items-center w-full border-b p-3.5 dark:border-zinc-800">
+      <nav className="navbar w-full flex flex-col border-b px-9 py-3.5 dark:border-zinc-800">
+        <div className="nav flex justify-between items-center">
           <button
             type="button"
             className="checkbtn relative cursor hidden"
@@ -73,8 +73,8 @@ export default function Header({ color, colorTheme }) {
               </svg>
             )}
           </button>
-          <label className="leftside w-1/4 flex relative">
-            <ul className="navul w-full flex justify-between items-center flex-row">
+          <label className="leftside w-1/3 relative">
+            <ul className="navul w-full flex justify-between flex-row">
               <li className="nav-items">
                 <Link href="/">
                   <a
@@ -228,7 +228,7 @@ export default function Header({ color, colorTheme }) {
             </div>
             <button
               className="w-8 h-8 p-1 rounded-md hover:ring-2 hover:ring-gray-300 transition-all"
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             >
               {theme === 'dark' ? (
                 <svg
@@ -278,41 +278,41 @@ export default function Header({ color, colorTheme }) {
           )} */}
           </div>
         </div>
+      </nav>
+      <Transition
+        show={isOpen}
+        enter="transition ease-out duration-400 transform"
+        enterFrom="opacity-0 scale-y-0"
+        enterTo="opacity-100 scale-y-100"
+        leave="transition ease-in duration-300 transform"
+        leaveFrom="opacity-100 scale-y-100"
+        leaveTo="opacity-0 scale-y-0"
 
-        <Transition
-          show={isOpen}
-          enter="transition ease-out duration-400 transform"
-          enterFrom="opacity-0 scale-y-0"
-          enterTo="opacity-100 scale-y-100"
-          leave="transition ease-in duration-300 transform"
-          leaveFrom="opacity-100 scale-y-100"
-          leaveTo="opacity-0 scale-y-0"
-
-          // enter="transition ease-out duration-100 transform"
-          // enterFrom="opacity-0 scale-95"
-          // enterTo="opacity-100 scale-100"
-          // leave="transition ease-in duration-75 transform"
-          // leaveFrom="opacity-100 scale-100"
-          // leaveTo="opacity-0 scale-95"
-        >
-          <div className="lg:hidden id=mobile-menu">
-            <div
-              // ref={ref}
-              className="collapse flex flex-col w-full px-2 bg-white border-b border-slate-200 dark:bg-black dark:border-zinc-800"
-              ref={navRef}
-            >
-              <li className="nav-lists cursor">
-                <Link href="/">
-                  <a
-                    className={`${
-                      router.pathname === '/' ? 'activeNav' : ''
-                    } navbar-links home flex items-center w-full h-full}`}
-                  >
-                    Home
-                  </a>
-                </Link>
-              </li>
-              {/* <li className="nav-lists cursor">
+        // enter="transition ease-out duration-100 transform"
+        // enterFrom="opacity-0 scale-95"
+        // enterTo="opacity-100 scale-100"
+        // leave="transition ease-in duration-75 transform"
+        // leaveFrom="opacity-100 scale-100"
+        // leaveTo="opacity-0 scale-95"
+      >
+        <div className="lg:hidden id=mobile-menu">
+          <div
+            // ref={ref}
+            className="collapse flex flex-col w-full bg-white border-b border-slate-200 dark:bg-black dark:border-zinc-800"
+            ref={navRef}
+          >
+            <li className="nav-lists cursor">
+              <Link href="/">
+                <a
+                  className={`${
+                    router.pathname === '/' ? 'activeNav' : ''
+                  } navbar-links home flex items-center w-full h-full}`}
+                >
+                  Home
+                </a>
+              </Link>
+            </li>
+            {/* <li className="nav-lists cursor">
           <Link href="/dashboard">
             <a
               className={`${
@@ -324,21 +324,20 @@ export default function Header({ color, colorTheme }) {
             </a>
           </Link>
         </li> */}
-              <li className="nav-lists cursor">
-                <Link href="/blog">
-                  <a
-                    className={`${
-                      router.pathname === '/blog' ? 'activeNav' : ''
-                    } navbar-links about flex items-center w-full h-full`}
-                  >
-                    Blog
-                  </a>
-                </Link>
-              </li>
-            </div>
+            <li className="nav-lists cursor">
+              <Link href="/blog">
+                <a
+                  className={`${
+                    router.pathname === '/blog' ? 'activeNav' : ''
+                  } navbar-links about flex items-center w-full h-full`}
+                >
+                  Blog
+                </a>
+              </Link>
+            </li>
           </div>
-        </Transition>
-      </nav>
+        </div>
+      </Transition>
     </>
   );
 }

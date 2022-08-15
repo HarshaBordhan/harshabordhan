@@ -14,9 +14,9 @@ export default function Blog() {
     <>
       <Layout>
         <Header color={setColor} colorTheme={colors} />
-        <main className="blog px-0.5 py-7 grid auto-cols-fr auto-rows-auto">
+        <main className="blog px-9 py-7 grid auto-cols-fr auto-rows-auto">
           <div className="first homeDiv fst">
-            <h2 className="text-4xl font-medium mb-10 text-black dark:text-white z-10 md:text-3xl">
+            <h2 className="text-4xl font-semibold mb-10 text-black dark:text-white z-10 md:text-3xl">
               {' '}
               <span className="highlight" id={`${colors}`}>
                 Blog
@@ -30,7 +30,7 @@ export default function Blog() {
             </p>
           </div>
           <div className="second homeDiv fst">
-            <h3 className="text-2xl font-medium mb-7 text-black dark:text-white">
+            <h3 className="text-2xl font-semibold mb-7 text-black dark:text-white">
               Posts
             </h3>
             <div className="flex flex-col">
@@ -94,22 +94,26 @@ export default function Blog() {
             </div>
           </div>
           <div className="fourth homeDiv fst">
-            <h3 className="text-2xl font-medium mb-10 text-black dark:text-white">
+            <h3 className="text-2xl font-semibold mb-10 text-black dark:text-white">
               Posts in Image
             </h3>
             <div className="images">
               <Link href="https://sendy-layout.vercel.app/">
                 <a target="_blank">
                   <div className="w-320 flex flex-col cursor hover:scale-[1.01] transition-all">
-                    <Image
-                      src={Sendy}
-                      alt="Sendy"
-                      width={320}
-                      height={160}
-                      className="w-320 rounded-md mb-2"
-                    />
+                    <span className="relative">
+                      <Image
+                        src={Sendy}
+                        alt="Sendy"
+                        // width={320}
+                        // height={160}
+                        // layout="fill"
+                        // objectFit="cover"
+                        className="w-320 rounded-md mb-2"
+                      />
+                    </span>
                     <div className="mt-6 mb-4">
-                      <h4 className="text-2xl mb-1.5">
+                      <h4 className="text-2xl font-medium mb-1.5">
                         Sendy layout(not responsive)
                       </h4>
                       <p className="text-base mb-1 text-gray-600 dark:text-gray-300">
@@ -142,15 +146,19 @@ export default function Blog() {
               <Link href="https://precog-finance.vercel.app/">
                 <a target="_blank">
                   <div className="w-320 flex flex-col cursor hover:scale-[1.01] transition-all">
-                    <Image
-                      src={Precog}
-                      alt="Precog"
-                      width={320}
-                      height={160}
-                      className="w-320 rounded-md mb-2"
-                    />
+                    <span className="relative">
+                      <Image
+                        src={Precog}
+                        alt="Precog"
+                        // width={320}
+                        // height={160}
+                        // layout="fill"
+                        // objectFit="cover"
+                        className="w-320 rounded-md mb-2"
+                      />
+                    </span>
                     <div className="mt-6 mb-4">
-                      <h4 className="text-2xl mb-1.5">
+                      <h4 className="text-2xl font-medium mb-1.5">
                         Precog finance home page(not responsive)
                       </h4>
                       <p className="text-base mb-1 text-gray-600 dark:text-gray-300">

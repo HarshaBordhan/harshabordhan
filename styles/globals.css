@@ -50,11 +50,11 @@ a {
 }
 
 .nav-items {
-  @apply w-1/2 h-16 list-none flex justify-center items-center;
+  @apply w-1/2 h-16 list-none flex justify-start items-center;
 }
 
 .nav-lists {
-  @apply w-full h-14 list-none px-2 flex justify-start items-center;
+  @apply w-full h-14 list-none px-4 flex justify-start items-center;
 }
 
 .nav-lists:hover {
@@ -86,7 +86,7 @@ a {
 }
 
 .homeDiv {
-  @apply flex flex-col py-8 px-9;
+  @apply flex flex-col py-8;
 }
 
 .fst {
@@ -224,9 +224,16 @@ a {
     }
   }
 
-  @media (max-width: 550px) {
-    .nav {
+  @media only screen and (max-width: 550px) and (min-width: 360px) {
+    .navbar {
       height: 68px;
+    }
+
+    .navbar,
+    .homepage,
+    .blog,
+    .footer {
+      padding: 14px 24px;
     }
 
     .leftside {
@@ -239,14 +246,14 @@ a {
     }
 
     .rightside {
-      width: 100px;
+      width: 18%;
       margin-right: 1rem;
     }
 
     .colorsdiv {
       padding-top: 0px;
       height: auto;
-      left: calc(45% - 72px);
+      left: calc(40% - 72px);
     }
 
     .colorsbar {
