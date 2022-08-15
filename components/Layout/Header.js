@@ -73,7 +73,7 @@ export default function Header({ color, colorTheme }) {
               </svg>
             )}
           </button>
-          <label className="leftside w-1/3 relative">
+          <label className="leftside w-1/3">
             <ul className="navul w-full flex justify-between flex-row">
               <li className="nav-items">
                 <Link href="/">
