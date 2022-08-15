@@ -13,10 +13,10 @@ export default function Header({ color, colorTheme }) {
   const router = useRouter();
 
   useEffect(() => {
-    // const currentColor = localStorage.getItem('theme-color');
-    // if (currentColor) {
-    //   color(currentColor);
-    // }
+    const currentColor = localStorage.getItem('theme-color');
+    if (currentColor) {
+      color(currentColor);
+    }
     setMounted(true);
   }, [color]);
 
@@ -24,7 +24,7 @@ export default function Header({ color, colorTheme }) {
 
   const handleClick = theme => {
     color(theme);
-    // localStorage.setItem('theme-color', theme);
+    localStorage.setItem('theme-color', theme);
   };
 
   return (
@@ -112,7 +112,7 @@ export default function Header({ color, colorTheme }) {
               </li>
             </ul>
           </label>
-          <div className="rightside w-1/6 flex justify-between items-center mr-10">
+          <div className="rightside w-1/6 flex justify-between items-center mr-10 md:w-1/5">
             <div className="colorsbar">
               <span
                 className="cursor"

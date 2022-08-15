@@ -14,7 +14,7 @@ export default function Blog() {
     <>
       <Layout>
         <Header color={setColor} colorTheme={colors} />
-        <main className="blog px-9 py-7 grid auto-cols-fr auto-rows-auto">
+        <main className="blogpage px-9 py-7 grid auto-cols-fr auto-rows-auto">
           <div className="first homeDiv fst">
             <h2 className="text-4xl font-semibold mb-10 text-black dark:text-white z-10 md:text-3xl">
               {' '}
