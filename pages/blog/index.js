@@ -14,7 +14,7 @@ export default function Blog() {
     <>
       <Layout>
         <Header color={setColor} colorTheme={colors} />
-        <main className="blogpage px-9 py-7 grid auto-cols-fr auto-rows-auto">
+        <main className="blogpage px-9 py-7 grid auto-cols-fr auto-rows-auto justify-center">
           <div className="first homeDiv fst">
             <h2 className="text-4xl font-semibold mb-10 text-black dark:text-white z-10 md:text-3xl">
               {' '}
@@ -100,7 +100,7 @@ export default function Blog() {
             <div className="images">
               <Link href="https://sendy-layout.vercel.app/">
                 <a target="_blank">
-                  <div className="w-320 flex flex-col cursor hover:scale-[1.01] transition-all">
+                  <div className="w-320 flex flex-col justify-center cursor hover:scale-[1.01] transition-all">
                     <span className="relative">
                       <Image
                         src={Sendy}
@@ -108,7 +108,7 @@ export default function Blog() {
                         // width={320}
                         // height={160}
                         // layout="fill"
-                        // objectFit="cover"
+                        objectFit="cover"
                         className="w-320 rounded-md mb-2"
                       />
                     </span>
@@ -145,7 +145,7 @@ export default function Blog() {
               </Link>
               <Link href="https://precog-finance.vercel.app/">
                 <a target="_blank">
-                  <div className="w-320 flex flex-col cursor hover:scale-[1.01] transition-all">
+                  <div className="w-320 flex flex-col justify-center cursor hover:scale-[1.01] transition-all">
                     <span className="relative">
                       <Image
                         src={Precog}
@@ -153,7 +153,7 @@ export default function Blog() {
                         // width={320}
                         // height={160}
                         // layout="fill"
-                        // objectFit="cover"
+                        objectFit="cover"
                         className="w-320 rounded-md mb-2"
                       />
                     </span>

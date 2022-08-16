@@ -112,7 +112,7 @@ export default function Header({ color, colorTheme }) {
               </li>
             </ul>
           </label>
-          <div className="rightside w-1/6 flex justify-between items-center mr-10 md:w-1/5">
+          <div className="rightside w-1/6 flex justify-between items-center mr-10 md:w-1/5 sm:w-1/4">
             <div className="colorsbar">
               <span
                 className="cursor"

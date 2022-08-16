@@ -49,10 +49,13 @@ export default function Home() {
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
-      <main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto">
+      <main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto justify-center">
         <div className="first homeDiv fst">
           <h2 className="text-4xl font-semibold mb-2 text-black dark:text-white z-10 md:text-3xl sm:text-2xl">
-            <span className={`highlight whitespace-nowrap`} id={`${colors}`}>
+            <span
+              className={`highlight highlightheading whitespace-nowrap`}
+              id={`${colors}`}
+            >
               Harsha Bordhan Chakma
             </span>
           </h2>
@@ -79,7 +82,7 @@ export default function Home() {
           <h3 className="text-2xl font-semibold mb-7 text-black dark:text-white">
             Blog Posts
           </h3>
-          <div className="flex flex-col">
+          <div className="flex flex-col items-start">
             {' '}
             <Link href="https://sendy-layout.vercel.app/">
               <a target="_blank">
@@ -137,28 +140,34 @@ export default function Home() {
           <h3 className="text-2xl font-semibold mb-10 text-black dark:text-white">
             Experience
           </h3>
-          <p className="mb-2 z-10">
-            I&#39;m a self-taught developer with the basics for web development
+          <div className="mb-2 z-10">
+            <p>
+              I&#39;m a self-taught developer with the basics for web
+              development
+            </p>
             <span className="highlight whitespace-nowrap" id={`${colors}`}>
               {' '}
-              HTML, CSS, JavaScript
-            </span>{' '}
-            and the frameworks
+              HTML, CSS, JavaScript{' '}
+            </span>
+            <p>and the frameworks</p>
             <span className="highlight whitespace-nowrap" id={`${colors}`}>
               {' '}
-              React, Nextjs and Tailwind CSS
+              React, NextJS and TailwindCSS
             </span>
             .
-          </p>
+          </div>
 
-          <p className="mb-2 z-10">
-            Currently designing and building some awesome website layouts using
+          <div className="mb-2 z-10">
+            <p>
+              Currently designing and building some awesome website layouts
+              using
+            </p>
             <span className="highlight whitespace-nowrap" id={`${colors}`}>
               {' '}
-              Tailwind CSS and Nextjs
+              TailwindCSS and NextJS
             </span>{' '}
             .
-          </p>
+          </div>
           <p className="mb-2">
             You can check them out on my
             <Link href="/blog">
