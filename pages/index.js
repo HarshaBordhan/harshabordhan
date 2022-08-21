@@ -117,7 +117,7 @@ export default function Home() {
             </Link>
           </div>
           <Link href="/blog">
-            <a className="flex justify-between items-center w-28 mt-4 text-color hover:text-gray-700 dark:hover:text-gray-200 duration-200 ease-out animate-bounce">
+            <a className="flex justify-between items-center w-28 mt-4 text-color hover:text-gray-700 dark:hover:text-gray-200 duration-200 ease-out">
               Read more{' '}
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -23,10 +23,10 @@ export default function Blog() {
               </span>
             </h2>
             <p>
-              I haven&#39;t started to writing yet but interested to make up my
-              mind in something to write. And quickly gonna make that happend.
-              I&#39;ll try write some articles about many topics especially web
-              development and edtech. For now, check the webpages below.
+              I haven&#39;t started writing yet but interested to make up my
+              mind in something to write. And quickly gonna make that happened.
+              I&#39;ll try write to some articles about many topics especially
+              web development and edtech. For now, check the webpages below.
             </p>
           </div>
           <div className="second homeDiv fst">
@@ -45,7 +45,7 @@ export default function Blog() {
                         </h4>
                       </div>
                       <div className="ml-9 opacity-50">
-                        A layout that makes any other layout easy
+                        A layout that helps to design any layout
                       </div>
                     </div>
                     <div className="post-time text-color md:pl-9">
@@ -90,7 +90,9 @@ export default function Blog() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-              going to add some articles ASAP..........
+              <span className="highlight ml-1.5" id={`${colors}`}>
+                going to add some articles ASAP..........
+              </span>
             </div>
           </div>
           <div className="fourth homeDiv fst">

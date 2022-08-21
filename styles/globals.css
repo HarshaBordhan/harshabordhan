@@ -54,7 +54,7 @@ a {
 }
 
 .nav-lists {
-  @apply w-full h-14 list-none px-4 flex justify-start items-center;
+  @apply w-full h-14 list-none px-6 flex justify-start items-center;
 }
 
 .nav-lists:hover {
@@ -105,7 +105,7 @@ a {
   /** global **/
 
   /** nav component **/
-  .nav {
+  .navbar {
     border-color: #f0f2f5;
     /* z-index: 1; */
   }
@@ -204,7 +204,8 @@ a {
   }
 
   .w-320 {
-    width: 320px;
+    /* width: 320px; */
+    width: 100%;
   }
 
   @media only screen and (max-width: 1024px) {
@@ -257,7 +258,7 @@ a {
     .colorsdiv {
       padding-top: 0px;
       height: auto;
-      left: calc(42% - 72px);
+      left: calc(45% - 70px);
     }
 
     .colorsbar {

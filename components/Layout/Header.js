@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function Header({ color, colorTheme }) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(false);
   const navRef = useRef();
@@ -17,10 +17,10 @@ export default function Header({ color, colorTheme }) {
     if (currentColor) {
       color(currentColor);
     }
-    setMounted(true);
+    // setMounted(true);
   }, [color]);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
 
   const handleClick = theme => {
     color(theme);
@@ -29,11 +29,11 @@ export default function Header({ color, colorTheme }) {
 
   return (
     <>
-      <nav className="navbar w-full flex flex-col border-b px-9 py-3.5 dark:border-zinc-800">
+      <nav className="navbar w-full border-b px-9 py-3.5 dark:border-zinc-800">
         <div className="nav flex justify-between items-center">
-          <button
+          {/* <button
             type="button"
-            className="checkbtn relative cursor hidden"
+            className="checkbtn relative cursor hidden" 
             // data-toggle="collapse"
             data-target="mobile-menu"
             aria-controls="#mobile-menu"
@@ -72,7 +72,41 @@ export default function Header({ color, colorTheme }) {
                 />
               </svg>
             )}
+          </button> */}
+          <button
+            type="button"
+            className="checkbtn relative cursor hidden"
+            // data-toggle="collapse"
+            data-target="mobile-menu"
+            aria-controls="#mobile-menu"
+            aria-expanded="false"
+            // aria-label="Toggle navigation"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div
+              className={`group z-50 relative w-6 h-6 flex flex-col ${
+                isOpen ? 'justify-around' : 'justify-evenly'
+              } items-center`}
+            >
+              {/* hamburger button */}
+              <span
+                className={`h-0.5 w-full bg-black rounded-lg transform transition duration-200 ease-in-out ${
+                  isOpen ? 'rotate-45 translate-y-2 w-5' : ''
+                } dark:bg-white`}
+              />
+              <span
+                className={`h-0.5 w-full bg-black rounded-lg duration-200 ease-in-out ${
+                  isOpen ? 'w-0' : 'w-full'
+                } dark:bg-white`}
+              />
+              <span
+                className={`h-0.5 w-full bg-black rounded-lg transform transition duration-200 ease-in-out ${
+                  isOpen ? '-rotate-45 -translate-y-2 w-5' : ''
+                } dark:bg-white`}
+              />
+            </div>
           </button>
+
           <label className="leftside w-1/3">
             <ul className="navul w-full flex justify-between flex-row">
               <li className="nav-items">
@@ -298,7 +332,7 @@ export default function Header({ color, colorTheme }) {
         <div className="lg:hidden id=mobile-menu">
           <div
             // ref={ref}
-            className="collapse flex flex-col w-full bg-white border-b border-slate-200 dark:bg-black dark:border-zinc-800"
+            className="otherNav collapse flex flex-col w-full bg-white border-b border-slate-200 dark:bg-black dark:border-zinc-800"
             ref={navRef}
           >
             <li className="nav-lists cursor">
