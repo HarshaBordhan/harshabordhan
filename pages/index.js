@@ -64,12 +64,13 @@ export default function Home() {
             Front-end web developer, web designer, artist and creator.
           </h3>
           <p className="mb-1.5">
-            Not have enough experience yet. No real-world project but gladly
-            looking forward to it.
+            Started coding journey recently learning front-end. Then learn
+            back-end after a few projects.
+            {/* Looking forward(Have plan) to work in blockchain websites(Web 3.0) in future. */}
           </p>
 
           <p className="mb-2">
-            Recently started working in a creative agency,
+            Currently working in a creative agency,
             <Link href="https://eetpixel.com/">
               <a className="underline font-semibold pl-1" target="_blank">
                 eetpixel

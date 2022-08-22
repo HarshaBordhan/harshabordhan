@@ -105,7 +105,8 @@ a {
   /** global **/
 
   /** nav component **/
-  .navbar {
+  .navbar,
+  .border-b-color {
     border-color: #f0f2f5;
     /* z-index: 1; */
   }

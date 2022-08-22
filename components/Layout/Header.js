@@ -332,7 +332,7 @@ export default function Header({ color, colorTheme }) {
         <div className="lg:hidden id=mobile-menu">
           <div
             // ref={ref}
-            className="otherNav collapse flex flex-col w-full bg-white border-b border-slate-200 dark:bg-black dark:border-zinc-800"
+            className="otherNav collapse border-b-color flex flex-col w-full h-auto bg-white border-b dark:bg-black dark:border-zinc-800"
             ref={navRef}
           >
             <li className="nav-lists cursor">
