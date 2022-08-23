@@ -219,6 +219,10 @@ a {
     .pageContainer {
       width: 85%;
     }
+
+    .rightside {
+      width: 27%;
+    } /* never exist before */
   }
 
   @media only screen and (max-width: 640px) {

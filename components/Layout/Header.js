@@ -146,7 +146,8 @@ export default function Header({ color, colorTheme }) {
               </li>
             </ul>
           </label>
-          <div className="rightside w-1/6 flex justify-between items-center mr-10 md:w-1/5 sm:w-1/4">
+          <div className="rightside w-1/6 flex justify-between items-center mr-10">
+            {/* md:w-1/5 sm:w-1/4 */}
             <div className="colorsbar">
               <span
                 className="cursor"
@@ -260,11 +261,11 @@ export default function Header({ color, colorTheme }) {
                 )}
               </div>
             </div>
-            <button
+            {/* <button
               className="w-8 h-8 p-1 rounded-md hover:ring-2 hover:ring-gray-300 transition-all"
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            >
-              {theme === 'light' ? (
+            > */}
+            {/* {theme === 'light' ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 m-auto"
@@ -279,7 +280,7 @@ export default function Header({ color, colorTheme }) {
                     d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
                   />
                 </svg>
-              ) : (
+              ) : theme === 'dark' ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -294,11 +295,44 @@ export default function Header({ color, colorTheme }) {
                     d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
                   />
                 </svg>
-              )}
-            </button>
-            {/* <label
+              ) : (
+                ''
+              )} */}
+            {/* {theme === 'dark' ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 m-auto"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              )} */}
+            {/* </button> */}
+            <label
               htmlFor="check"
-              className="bg-gray-300 relative w-11 h-7 rounded-full cursor"
+              className="bg-gray-300 relative w-11 h-7 rounded-full cursor inline-block"
             >
               <input
                 type="checkbox"
@@ -306,8 +340,8 @@ export default function Header({ color, colorTheme }) {
                 className="sr-only peer"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               />
-              <span className="w-6 h-6 absolute rounded-full bg-slate-100 left-0.5 top-0.5 peer-checked:left-5 duration-300 ease-in-out"></span>
-            </label> */}
+              <span className="w-6 h-6 absolute rounded-full bg-slate-100 left-0 top-0.5 peer-checked:left-5 duration-300 ease-in-out"></span>
+            </label>
           </div>
         </div>
       </nav>
