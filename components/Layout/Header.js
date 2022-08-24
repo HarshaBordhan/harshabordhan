@@ -332,7 +332,7 @@ export default function Header({ color, colorTheme }) {
             {/* </button> */}
             <label
               htmlFor="check"
-              className="bg-gray-300 relative w-11 h-7 rounded-full cursor inline-block"
+              className="bg-gray-300 dark:bg-gray-400 relative w-11 h-7 rounded-full cursor inline-block"
             >
               <input
                 type="checkbox"
@@ -340,7 +340,7 @@ export default function Header({ color, colorTheme }) {
                 className="sr-only peer"
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               />
-              <span className="w-6 h-6 absolute rounded-full bg-slate-100 left-0 top-0.5 peer-checked:left-5 duration-300 ease-in-out"></span>
+              <span className="w-6 h-6 absolute rounded-full bg-gray-100 left-0 top-0.5 peer-checked:left-5 duration-300 ease-in-out"></span>
             </label>
           </div>
         </div>

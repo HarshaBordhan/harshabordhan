@@ -222,7 +222,7 @@ a {
 
     .rightside {
       width: 27%;
-    } /* never exist before */
+    } /* never existed before */
   }
 
   @media only screen and (max-width: 640px) {
