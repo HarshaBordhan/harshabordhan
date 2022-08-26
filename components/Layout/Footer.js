@@ -29,7 +29,7 @@ export default function Footer() {
                 />
               </a>
             </Link>
-            <Link href="https://web.facebook.com/people/Harsha-Bordhan-Changma/100008888252198/">
+            {/* <Link href="https://web.facebook.com/people/Harsha-Bordhan-Changma/100008888252198/">
               <a target="_blank" title="Facebook">
                 <Image
                   className="cursor dark:invert sepia saturate-0 hue-rotate-60
@@ -40,7 +40,7 @@ export default function Footer() {
                   height={24}
                 />
               </a>
-            </Link>
+            </Link> */}
 
             <Link href="https://github.com/HarshaBordhan">
               <a target="_blank" title="Github">
@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
             </Link>
           </div>
-          <p className="">Just knock me...</p>
+          <p className="">Feel free to knock me anytime.</p>
         </div>
         <div className="second-content flex w-1/2 justify-end items-start">
           <span className="w-4 h-4 mt-2 mr-2 flex items-center">
