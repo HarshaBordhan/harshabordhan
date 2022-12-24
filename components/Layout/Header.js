@@ -1,18 +1,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Transition } from '@headlessui/react';
 import { useTheme } from 'next-themes';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Header({ color, colorTheme }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(false);
-  const navRef = useRef();
   const router = useRouter();
-
-  // router.reload(window.location.pathname);
 
   useEffect(() => {
     const currentColor = localStorage.getItem('theme-color');
@@ -22,67 +19,20 @@ export default function Header({ color, colorTheme }) {
     setMounted(true);
   }, [color]);
 
-  // if (!mounted) return null;
-
   const handleClick = theme => {
     color(theme);
     localStorage.setItem('theme-color', theme);
   };
 
   return (
-    <>
-      <nav className="navbar w-full border-b px-9 py-3.5 dark:border-zinc-800">
+    <header className="main-header border-b dark:border-zinc-800">
+      <nav className="navbar w-full px-5 py-3.5 border-b dark:border-zinc-800">
         <div className="nav flex justify-between items-center">
-          {/* <button
-            type="button"
-            className="checkbtn relative cursor hidden" 
-            // data-toggle="collapse"
-            data-target="mobile-menu"
-            aria-controls="#mobile-menu"
-            aria-expanded="false"
-            // aria-label="Toggle navigation"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {!isOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            )}
-          </button> */}
           <button
             type="button"
             className="checkbtn relative cursor hidden"
-            // data-toggle="collapse"
-            data-target="mobile-menu"
-            aria-controls="#mobile-menu"
-            aria-expanded="false"
-            // aria-label="Toggle navigation"
+            data-toggle="collapse"
+            aria-label="Toggle navigation"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div
@@ -90,27 +40,53 @@ export default function Header({ color, colorTheme }) {
                 isOpen ? 'justify-around' : 'justify-evenly'
               } items-center`}
             >
-              {/* hamburger button */}
-              <span
-                className={`h-0.5 w-full bg-black rounded-lg transform transition duration-200 ease-in-out ${
-                  isOpen ? 'rotate-45 translate-y-2 w-5' : ''
-                } dark:bg-white`}
+              <motion.span
+                className={`${
+                  isOpen ? 'w-5' : 'w-full'
+                } h-0.5 bg-black rounded-lg  dark:bg-white`}
+                initial={false}
+                animate={
+                  isOpen
+                    ? { rotate: 45, translateY: 8 }
+                    : {
+                        rotate: 0,
+                        translateY: 0,
+                      }
+                }
+                transition={{
+                  type: 'spring',
+                  stiffness: 120,
+                  ease: 'easeInOut',
+                }}
               />
               <span
-                className={`h-0.5 w-full bg-black rounded-lg duration-200 ease-in-out ${
-                  isOpen ? 'w-0' : 'w-full'
-                } dark:bg-white`}
+                className={`${
+                  isOpen ? 'w-0 h-0' : 'w-full h-0.5'
+                } bg-black rounded-lg  dark:bg-white`}
               />
-              <span
-                className={`h-0.5 w-full bg-black rounded-lg transform transition duration-200 ease-in-out ${
-                  isOpen ? '-rotate-45 -translate-y-2 w-5' : ''
-                } dark:bg-white`}
+              <motion.span
+                className={`${
+                  isOpen ? 'w-5' : 'w-full'
+                } h-0.5 bg-black rounded-lg  dark:bg-white`}
+                initial={false}
+                animate={
+                  isOpen
+                    ? { rotate: -45, translateY: -8 }
+                    : {
+                        rotate: 0,
+                        translateY: 0,
+                      }
+                }
+                transition={{
+                  type: 'spring',
+                  stiffness: 120,
+                  ease: 'easeInOut',
+                }}
               />
             </div>
           </button>
-
-          <label className="leftside w-1/3">
-            <ul className="navul w-full flex justify-between flex-row">
+          <label className="leftside">
+            <ul className="navul w-full flex items-center">
               <li className="nav-items">
                 <Link href="/">
                   <a
@@ -122,19 +98,6 @@ export default function Header({ color, colorTheme }) {
                   </a>
                 </Link>
               </li>
-
-              {/* <li className="nav-items">
-              <Link href="/dashboard">
-                <a
-                  className={`${
-                    router.pathname === '/dashboard' ? 'activeNav' : ''
-                  } navbar-links cursor`}
-                >
-                  {' '}
-                  Dashboard{' '}
-                </a>
-              </Link>
-            </li> */}
               <li className="nav-items">
                 <Link href="/blog">
                   <a
@@ -143,6 +106,28 @@ export default function Header({ color, colorTheme }) {
                     } navbar-links cursor`}
                   >
                     Blog
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-items">
+                <Link href="/commentbook">
+                  <a
+                    className={`${
+                      router.pathname === '/commentbook' ? 'activeNav' : ''
+                    } navbar-links cursor`}
+                  >
+                    Commentbook
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-items">
+                <Link href="/snippets">
+                  <a
+                    className={`${
+                      router.pathname === '/snippets' ? 'activeNav' : ''
+                    } navbar-links cursor`}
+                  >
+                    Snippets
                   </a>
                 </Link>
               </li>
@@ -155,15 +140,15 @@ export default function Header({ color, colorTheme }) {
                 className="cursor"
                 title="Choose Highlight Color"
                 onClick={() => {
-                  // const target = e.target;
-                  // if (target) setIsShow(!isShow);
                   setIsShow(!isShow);
                 }}
               >
                 {/* <?xml version="1.0" encoding="iso-8859-1"?>
               <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> */}
                 <svg
-                  className="rotation w-4 h-3 fill-black dark:fill-white"
+                  className={`w-4 h-3 fill-black dark:fill-white ${
+                    isShow ? 'rotation' : 'rotation-reverse'
+                  }`}
                   version="1.1"
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +201,10 @@ export default function Header({ color, colorTheme }) {
               </span>
               <div className="colorsdiv h-20 absolute pt-14">
                 {isShow ? (
-                  <span className="flex flex-row m-0" focusable="false">
+                  <span
+                    className="flex flex-row m-0"
+                    // focusable="false"
+                  >
                     <div
                       className={`${
                         (color && colorTheme) === 'theme-current'
@@ -302,85 +290,68 @@ export default function Header({ color, colorTheme }) {
                   </svg>
                 ))}
             </button>
-            {/* <label
-              htmlFor="check"
-              className="bg-gray-300 dark:bg-gray-400 relative w-11 h-7 rounded-full cursor inline-flex"
-            >
-              <input
-                type="checkbox"
-                id="check"
-                className="sr-only peer"
-                value=""
-                onClick={() => {
-                  setTheme(theme === 'light' ? 'dark' : 'light');
-                }}
-              />
-              <span
-                className={`w-6 h-6 absolute rounded-full bg-gray-100 left-0 top-0.5 peer-checked:translate-x-5 after:content-[''] duration-300 ease-in-out`}
-              ></span>
-            </label> */}
           </div>
         </div>
       </nav>
-      <Transition
-        show={isOpen}
-        enter="transition ease-out duration-400 transform"
-        enterFrom="opacity-0 scale-y-0"
-        enterTo="opacity-100 scale-y-100"
-        leave="transition ease-in duration-300 transform"
-        leaveFrom="opacity-100 scale-y-100"
-        leaveTo="opacity-0 scale-y-0"
 
-        // enter="transition ease-out duration-100 transform"
-        // enterFrom="opacity-0 scale-95"
-        // enterTo="opacity-100 scale-100"
-        // leave="transition ease-in duration-75 transform"
-        // leaveFrom="opacity-100 scale-100"
-        // leaveTo="opacity-0 scale-95"
+      <div
+        className={`otherNav flex flex-col bg-white  dark:bg-black ${
+          isOpen ? 'h-56' : 'h-0 border-none'
+        }`}
       >
-        <div className="lg:hidden id=mobile-menu">
-          <div
-            // ref={ref}
-            className="otherNav collapse border-b-color flex flex-col w-full h-auto bg-white border-b dark:bg-black dark:border-zinc-800"
-            ref={navRef}
-          >
-            <li className="nav-lists cursor">
-              <Link href="/">
-                <a
-                  className={`${
-                    router.pathname === '/' ? 'activeNav' : ''
-                  } navbar-links home flex items-center w-full h-full}`}
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
-            {/* <li className="nav-lists cursor">
-          <Link href="/dashboard">
+        <li
+          className={`nav-lists cursor ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <Link href="/">
             <a
               className={`${
-                router.pathname === '/dashboard' ? 'activeNav' : ''
-              } navbar-links dashboard flex items-center w-full h-full`}
+                router.pathname === '/' ? 'activeNav' : ''
+              } navbar-links home flex items-center w-full h-full}`}
             >
-              {' '}
-              Dashboard{' '}
+              Home
             </a>
           </Link>
-        </li> */}
-            <li className="nav-lists cursor">
-              <Link href="/blog">
-                <a
-                  className={`${
-                    router.pathname === '/blog' ? 'activeNav' : ''
-                  } navbar-links about flex items-center w-full h-full`}
-                >
-                  Blog
-                </a>
-              </Link>
-            </li>
-          </div>
-        </div>
-      </Transition>
-    </>
+        </li>
+        <li
+          className={`nav-lists cursor ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <Link href="/blog">
+            <a
+              className={`${
+                router.pathname === '/blog' ? 'activeNav' : ''
+              } navbar-links about flex items-center w-full h-full`}
+            >
+              Blog
+            </a>
+          </Link>
+        </li>
+        <li
+          className={`nav-lists cursor ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <Link href="/commentbook">
+            <a
+              className={`${
+                router.pathname === '/commentbook' ? 'activeNav' : ''
+              } navbar-links home flex items-center w-full h-full}`}
+            >
+              Commentbook
+            </a>
+          </Link>
+        </li>
+        <li
+          className={`nav-lists cursor ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+        >
+          <Link href="/snippets">
+            <a
+              className={`${
+                router.pathname === '/snippets' ? 'activeNav' : ''
+              } navbar-links home flex items-center w-full h-full}`}
+            >
+              Snippets
+            </a>
+          </Link>
+        </li>
+      </div>
+    </header>
   );
 }

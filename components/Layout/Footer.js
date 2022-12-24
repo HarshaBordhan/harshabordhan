@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Twitter from '../../src/img/twitter-svgrepo-com(1).svg';
-import Facebook from '../../src/img/facebook-svgrepo-com(1).svg';
+// import Facebook from '../../src/img/facebook-svgrepo-com(1).svg';
+import Linkedin from '../../src/img/linkedin-svgrepo-com.svg';
 import Github from '../../src/img/github-svgrepo-com.svg';
 import Email from '../../src/img/gmail-svgrepo-com.svg';
 import Checked from '../../src/img/checked.png';
@@ -41,7 +42,18 @@ export default function Footer() {
                 />
               </a>
             </Link> */}
-
+            <Link href="https://linkedin.com/in/harsha-bordhan-chakma-98105824b/">
+              <a target="_blank" title="Linkedin">
+                <Image
+                  className="cursor dark:invert sepia saturate-0 hue-rotate-60
+                    brightness-100 contrast-100;"
+                  src={Linkedin}
+                  alt="Contact Logo"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </Link>
             <Link href="https://github.com/HarshaBordhan">
               <a target="_blank" title="Github">
                 <Image

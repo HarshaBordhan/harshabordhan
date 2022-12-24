@@ -4,7 +4,7 @@
 // import { useState } from 'react';
 import styles from '../../styles/Modal.module.css';
 
-export default function Dashboard() {
+export default function CommentBook() {
   // const [colors, setColor] = useState('theme-current');
   return (
     <>

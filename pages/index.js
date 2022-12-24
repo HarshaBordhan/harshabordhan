@@ -8,6 +8,7 @@ import Layout from '../components/Layout/Layout';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import SliderImage from '../components/SliderImage';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [colors, setColor] = useState('theme-current');
@@ -29,27 +30,21 @@ export default function Home() {
   ];
 
   const change = count => {
-    // if (count === images.length) return (count = 0);
     return (count = (count + 1) % images.length);
-    // if (count < 0) return (count = images.length - 1);
-    // return count;
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // setIndex(count => change(count + 1));
       setIndex(change(index));
     }, 6000);
-
     return () => clearInterval(interval);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
-      <main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto justify-center">
+      <motion.main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto justify-center">
         <div className="first homeDiv fst">
           <h2 className="text-4xl font-semibold mb-2 text-black dark:text-white z-10 md:text-3xl sm:text-2xl">
             <span
@@ -64,7 +59,7 @@ export default function Home() {
             Front-end web developer, web designer, artist and creator.
           </h3>
           <p className="mb-1.5">
-            Started coding journey recently learning front-end. Then learn
+            Started coding journey recently learning front-end. Then jump into
             back-end after a few projects.
             {/* Looking forward(Have plan) to work in blockchain websites(Web 3.0) in future. */}
           </p>
@@ -85,9 +80,10 @@ export default function Home() {
           </h3>
           <div className="flex flex-col items-start">
             {' '}
-            <Link href="https://sendy-layout.vercel.app/">
-              <a target="_blank">
-                <div className="w-full py-3 cursor blog transform hover:scale-[1.01] transition-all">
+            <div className="w-full py-3 cursor blog transform hover:scale-[1.01] transition-all">
+              <Link href={`/blog/sendy`}>
+                {/* <a target="_blank"> */}
+                <a>
                   {/* transition-all => transition-property: all;
                       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
                       transition-duration: 150ms;
@@ -100,12 +96,14 @@ export default function Home() {
                     </h4>
                   </div>
                   <div className="ml-9 text-color">June 14,2022 - 1min</div>
-                </div>
-              </a>
-            </Link>
-            <Link href="https://precog-finance.vercel.app/">
-              <a target="_blank">
-                <div className="w-full py-3 cursor blog transform hover:scale-[1.01] transition-all">
+                  {/* </a> */}
+                </a>
+              </Link>
+            </div>
+            <div className="w-full py-3 cursor blog transform hover:scale-[1.01] transition-all">
+              <Link href={`/blog/precog-finance`}>
+                {/* <a target="_blank"> */}
+                <a>
                   <div className="flex">
                     <div className="text-xl font-medium w-5">ii.</div>
                     <h4 className="text-xl ml-4 mb-1.5">
@@ -113,9 +111,10 @@ export default function Home() {
                     </h4>
                   </div>
                   <div className="ml-9 text-color">June 24,2022 - 1min</div>
-                </div>
-              </a>
-            </Link>
+                  {/* </a> */}
+                </a>
+              </Link>
+            </div>
           </div>
           <Link href="/blog">
             <a className="flex justify-between items-center w-28 mt-4 text-color hover:text-gray-700 dark:hover:text-gray-200 duration-200 ease-out">
@@ -246,7 +245,7 @@ export default function Home() {
             /> */}
           </div>
         </div>
-      </main>
+      </motion.main>
       <Footer />
     </Layout>
   );
