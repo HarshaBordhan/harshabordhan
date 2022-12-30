@@ -1,6 +1,6 @@
 import prisma from '../../lib/prisma';
 import { unstable_getServerSession } from 'next-auth';
-import authOptions from './auth/[...nextauth]';
+import { authOptions } from './auth/[...nextauth]';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'Not authenticated' });
   }
 
-  const { message } = req.body;
+  const { message } = JSON.parse(req.body);
 
   if (!message) {
     return res.status(400).json({ error: 'Message is required' });
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   const createdMessage = await prisma.messages.create({
     data: {
       msg: message,
-      user: {
+      User: {
         connect: {
           id: session.user.id,
         },
