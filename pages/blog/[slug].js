@@ -20,7 +20,7 @@ const PostPage = ({ frontmatter, mdxSource }) => {
     <>
       <Layout>
         <Header color={setColor} colorTheme={colors} />
-        <main className="px-9 py-7 font-semibold text-xl">
+        <main className="px-9 py-7">
           <div className="first homeDiv fst">
             <h3 className="text-3xl font-semibold mb-10 z-10 md:text-3xl">
               <span className="highlight" id={`${colors}`}>
