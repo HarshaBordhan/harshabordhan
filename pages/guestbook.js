@@ -30,17 +30,23 @@ export default function Guestbook({ fallbackData }) {
   const session = useSession();
   console.log(session);
 
+  // const { data: session } = useSession();
+
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
       <main className="px-9 py-7 flex flex-col justify-between gap-4 ">
         <div className="first homeDiv fst">
-          <h3 className="text-4xl font-normal mb-2 z-10">
+          <h3 className="text-4xl font-normal mb-10 z-10">
             <span className="highlight" id={`${colors}`}>
               Guestbook
             </span>
           </h3>
-          <p className="font-light">Here this guestbook is for you to put a message to provide me an encouragement that helps me a lot.</p>
+          <p className="font-light">
+            Here this guestbook is for you to put a message to provide me an
+            encouragement that helps me a lot. You can leave comments, feedback,
+            your opinions, and provide suggestions.{' '}
+          </p>
         </div>
         <div className="second">
           <form
@@ -49,9 +55,9 @@ export default function Guestbook({ fallbackData }) {
           >
             {session ? (
               <>
-                {/* <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
+                <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
                   Welcome, {session.data.user.name}
-                </h3> */}
+                </h3>
                 <p className="text-lg font-light">Give a Message</p>
                 <div className="flex flex-row justify-between gap-1 mb-2">
                   <textarea
@@ -79,10 +85,14 @@ export default function Guestbook({ fallbackData }) {
 
                 <button
                   className="bg-gray-200 dark:bg-gray-500 rounded-md w-16 h-8 hover:scale-[1.02]"
-                  onClick={() =>
-                    signIn('google', {
-                      callbackUrl: '/message',
-                    })
+                  onClick={
+                    () =>
+                      signIn('google', {
+                        callbackUrl: '/guestbook',
+                      })
+                    // signIn({
+                    //   callbackUrl: '/guestbook',
+                    // })
                   }
                 >
                   Sign In
