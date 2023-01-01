@@ -27,10 +27,10 @@ export default function Guestbook({ fallbackData }) {
       },
     }
   );
-  const session = useSession();
-  console.log(session);
-
-  // const { data: session } = useSession();
+  // const session = useSession();
+  // console.log(session);
+  //
+  const { data: session } = useSession();
 
   return (
     <Layout>
@@ -56,7 +56,7 @@ export default function Guestbook({ fallbackData }) {
             {session ? (
               <>
                 <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
-                  Welcome, {session.data.user.name}
+                  Welcome, {session.user.name}
                 </h3>
                 <p className="text-lg font-light">Give a Message</p>
                 <div className="flex flex-row justify-between gap-1 mb-2">
