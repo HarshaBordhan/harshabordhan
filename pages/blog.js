@@ -25,10 +25,10 @@ export default function Blog({ posts }) {
               </span>
             </h2>
             <p>
-              I haven&#39;t started writing yet but interested to make up my
-              mind in something to write. And quickly gonna make that happened.
-              I&#39;ll try write to some articles about many topics especially
-              web development and edtech. For now, check the webpages below.
+              I am interested in writing about a variety of topics, particularly
+              web development and edtech. I haven&#39;t started writing yet, but
+              I plan to make it happen soon. In the meantime, you can check out
+              the webpages below. Thank you for your interest!
             </p>
           </div>
           <div className="second homeDiv fst">

@@ -1,5 +1,6 @@
 import prisma from '../../../lib/prisma';
 import { getSession } from 'next-auth/react';
+import { format } from 'date-fns';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -7,11 +8,31 @@ export default async function handler(req, res) {
       orderBy: {
         createdAt: 'desc',
       },
+      include: {
+        User: true,
+      },
+      //  select: {
+      //   id: true,
+      //   msg: true,
+      //   createdAt: true,
+      //   User: {
+      //     name: true,
+      //     email: true,
+      //   },
+      // },
     });
+
     return res.status(200).json(
       message.map(msg => {
         return {
+          id: msg.id,
           msg: msg.msg,
+          createdAt: format(new Date(msg.createdAt), "d MMM yyyy 'at' h:mm bb"),
+          updatedAt: format(new Date(msg.updatedAt), "d MMM yyyy 'at' h:mm bb"),
+          User: {
+            email: msg.User.email,
+            name: msg.User.name,
+          },
         };
       })
     );

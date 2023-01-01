@@ -92,7 +92,7 @@ export default function Home() {
                   <div className="flex">
                     <div className="text-xl font-medium w-5">i.</div>
                     <h4 className="text-xl ml-4 mb-1.5">
-                      Sendy layout(not responsive)
+                      Sendy layout(not fully responsive)
                     </h4>
                   </div>
                   <div className="ml-9 text-color">June 14,2022 - 1min</div>
@@ -107,7 +107,7 @@ export default function Home() {
                   <div className="flex">
                     <div className="text-xl font-medium w-5">ii.</div>
                     <h4 className="text-xl ml-4 mb-1.5">
-                      Precog finance home page(not responsive)
+                      Precog finance page(not fully responsive)
                     </h4>
                   </div>
                   <div className="ml-9 text-color">June 24,2022 - 1min</div>
