@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useSession, signIn } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import MsgComp from '../components/MsgComp';
 import prisma from '../lib/prisma';
@@ -29,8 +29,9 @@ export default function Guestbook({ fallbackData }) {
   );
   // const session = useSession();
   // console.log(session);
-  //
-  const { data: session } = useSession();
+
+  const { data: session, status } = useSession();
+  console.log(session, status);
 
   return (
     <Layout>
@@ -53,7 +54,7 @@ export default function Guestbook({ fallbackData }) {
             className="bg-gray-200 dark:bg-gray-900 rounded-lg flex flex-col gap-2 justify-between p-4 mb-5"
             onSubmit={handleSubmit(message => mutation.mutate(message))}
           >
-            {session ? (
+            {session?.user && status === 'authenticated' ? (
               <>
                 <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
                   Welcome, {session.user.name}
@@ -67,10 +68,17 @@ export default function Guestbook({ fallbackData }) {
                   />
                   <button
                     type="submit"
-                    className="w-2/12 h-10 bg-gray-300 dark:bg-gray-700 hover:scale-[1.02] rounded-md"
+                    className="w-2/12 h-10 bg-gray-300 dark:bg-gray-500 hover:scale-[1.02] rounded-md"
                   >
                     Add
                   </button>
+                  {/* <button
+                    onClick={() => {
+                      signOut();
+                    }}
+                  >
+                    Sign Out
+                  </button> */}
                 </div>
               </>
             ) : (
@@ -84,7 +92,7 @@ export default function Guestbook({ fallbackData }) {
                 </p>
 
                 <button
-                  className="bg-gray-200 dark:bg-gray-500 rounded-md w-16 h-8 hover:scale-[1.02]"
+                  className="bg-gray-300 dark:bg-gray-500 rounded-md w-16 h-8 hover:scale-[1.02]"
                   onClick={
                     () =>
                       signIn('google', {
