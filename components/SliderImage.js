@@ -14,15 +14,18 @@ const SliderImage = ({ src, alt, priority, showImage }) => {
 
   return (
     <animated.div style={spring}>
-      <Image
-        src={src}
-        alt={alt}
-        // width={265}
-        // height={376}
-        layout="fill"
-        // objectFit="cover"
-        priority={priority}
-      />
+      <div className="w-full h-full absolute">
+        <Image
+          src={src}
+          alt={alt}
+          // width={265}
+          // height={376}
+          layout="fill"
+          // objectFit="contain"
+          // objectFit="cover"
+          priority={priority}
+        />
+      </div>
     </animated.div>
   );
 };

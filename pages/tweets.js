@@ -16,7 +16,9 @@ export default function Tweets() {
       </Layout> */}
 
       <div className={styles.modal}>
-        <h1>Currently Building </h1>
+        <h1 className="text-center text-black dark:text-white font-[verdana]">
+          UNDER CONSTRUCTION
+        </h1>
       </div>
       <div className={styles.overlay}></div>
     </>

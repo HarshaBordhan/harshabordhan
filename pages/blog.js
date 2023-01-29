@@ -18,7 +18,7 @@ export default function Blog({ posts }) {
         <Header color={setColor} colorTheme={colors} />
         <main className="blogpage px-9 py-7 grid auto-cols-fr auto-rows-auto justify-center">
           <div className="first homeDiv fst">
-            <h2 className="text-4xl font-normal mb-10 text-black dark:text-white z-10 md:text-3xl">
+            <h2 className="text-4xl font-normal mb-10 z-10 md:text-3xl">
               {' '}
               <span className="highlight" id={`${colors}`}>
                 Blog
@@ -26,19 +26,17 @@ export default function Blog({ posts }) {
             </h2>
             <p>
               I am interested in writing about a variety of topics, particularly
-              web development and edtech. I haven&#39;t started writing yet, but
-              I plan to make it happen soon. In the meantime, you can check out
-              the webpages below. Thank you for your interest!
+              web development and edtech. In this blog page, you can read blog
+              posts and check out the webpages below. Thank you for your
+              interest!
             </p>
           </div>
           <div className="second homeDiv fst">
-            <h3 className="text-2xl font-normal mb-7 text-black dark:text-white">
-              Posts
-            </h3>
-            <div className="flex flex-col">
+            <h3 className="text-2xl font-normal mb-7">Posts</h3>
+            <div className="flex flex-col gap-8">
               {posts.map((post, index) => (
                 <Link href={'/blog/' + post.slug} passHref key={index}>
-                  <div className="post-items flex justify-between items-center cursor md:flex-col md:items-start">
+                  <div className="post-items flex justify-between items-center gap-12 cursor md:flex-col md:items-start md:gap-0">
                     <div className="post-title py-3">
                       <div className="flex">
                         <div className="text-xl font-medium w-5">
@@ -60,7 +58,7 @@ export default function Blog({ posts }) {
               ))}
             </div>
           </div>
-          <div className="third homeDiv fst">
+          {/* <div className="third homeDiv fst">
             <div className="flex items-center animate-bounce">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,16 +73,14 @@ export default function Blog({ posts }) {
                   strokeLinejoin="round"
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
-              </svg>
+              </svg> 
               <span className="highlight ml-1.5" id={`${colors}`}>
                 gonna add some articles ASAP..........
-              </span>
-            </div>
-          </div>
+              </span> 
+            </div> 
+          </div> */}
           <div className="fourth homeDiv fst">
-            <h3 className="text-2xl font-normal mb-10 text-black dark:text-white">
-              Posts in Image
-            </h3>
+            <h3 className="text-2xl font-normal mb-10">Posts in Image</h3>
             <div className="images">
               {posts.map((post, index) => (
                 <Link href={`/blog/${post.slug}`} passHref key={index}>
@@ -100,10 +96,11 @@ export default function Blog({ posts }) {
                         // objectFit="contain"
                         // layout="fill"
                         objectFit="cover"
+                        priority={true}
                       />
                     </span>
                     <div className="mt-6 mb-4">
-                      <h4 className="text-2xl font-medium mb-1.5">
+                      <h4 className="text-xl font-medium mb-3">
                         {post.frontmatter.title}
                       </h4>
                       <p className="text-base mb-1 text-gray-600 dark:text-gray-300">

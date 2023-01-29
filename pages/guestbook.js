@@ -33,20 +33,26 @@ export default function Guestbook({ fallbackData }) {
   const { data: session, status } = useSession();
   console.log(session, status);
 
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      console.log('pressed');
+    }
+  };
+
   return (
     <Layout>
       <Header color={setColor} colorTheme={colors} />
-      <main className="px-9 py-7 flex flex-col justify-between gap-4 ">
+      <main className="px-9 py-7 flex flex-col justify-between gap-4">
         <div className="first homeDiv fst">
           <h3 className="text-4xl font-normal mb-10 z-10">
             <span className="highlight" id={`${colors}`}>
               Guestbook
             </span>
           </h3>
-          <p className="font-light">
-            Here this guestbook is for you to put a message to provide me an
-            encouragement that helps me a lot. You can leave comments, feedback,
-            your opinions, and provide suggestions.{' '}
+          <p>
+            This guestbook is for you to leave a message of encouragement,
+            feedback, opinions, and suggestions that will help me a lot. Your
+            comments and input are greatly appreciated.{' '}
           </p>
         </div>
         <div className="second">
@@ -57,14 +63,23 @@ export default function Guestbook({ fallbackData }) {
             {session?.user && status === 'authenticated' ? (
               <>
                 <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
-                  Welcome, {session.user.name}
+                  Hey, {session.user.name.split(' ')[0]}
                 </h3>
-                <p className="text-lg font-light">Give a Message</p>
+                {/* <p className="text-lg font-light">Write something</p> */}
+                {/* <p className="text-lg font-light">Give a message</p> */}
                 <div className="flex flex-row justify-between gap-1 mb-2">
-                  <textarea
+                  {/* <textarea
+                    {...register('message')}
+                    required
+                    className="w-5/6 h-10 min-h-[2.5rem] p-2 border dark:border-gray-600 overflow-hidden resize-none rounded-md focus:outline-0 text-base"
+                  /> */}
+                  <input
                     {...register('message')}
                     required
                     className="w-5/6 h-10 min-h-[2.5rem] p-2 border dark:border-gray-600 rounded-md focus:outline-0 text-base"
+                    placeholder="Give a message"
+                    onKeyDown={handleKeyDown}
+                    autoComplete="off"
                   />
                   <button
                     type="submit"
@@ -73,6 +88,7 @@ export default function Guestbook({ fallbackData }) {
                     Add
                   </button>
                   {/* <button
+                    className="w-2/12 h-10 bg-gray-300 dark:bg-gray-500 hover:scale-[1.02] rounded-md"
                     onClick={() => {
                       signOut();
                     }}

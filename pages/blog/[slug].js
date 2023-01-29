@@ -37,6 +37,7 @@ const PostPage = ({ frontmatter, mdxSource }) => {
             className="rounded-lg"
             objectFit="contain"
             layout="responsive"
+            priority={true}
           />
           <br />
           <MDXRemote {...mdxSource} components={components} />
