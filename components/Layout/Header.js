@@ -304,7 +304,7 @@ export default function Header({ color, colorTheme }) {
         > */}
         <div
           className={`otherNav flex flex-col ${
-            isOpen ? 'h-auto' : 'h-0 border-none'
+            isOpen ? 'h-[169px]' : 'h-0 border-none'
           }`}
         >
           <li

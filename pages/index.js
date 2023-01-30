@@ -142,19 +142,18 @@ export default function Home() {
             <p>and the frameworks</p>
             <span className="highlight whitespace-nowrap" id={`${colors}`}>
               {' '}
-              React, NextJS and TailwindCSS
+              React, Next.js and TailwindCSS
             </span>
             .
           </div>
 
           <div className="mb-2 z-10">
             <p>
-              Currently designing and building some simple but awesome website
-              layouts using
+              Currently building some simple but awesome web applications using
             </p>
             <span className="highlight whitespace-nowrap" id={`${colors}`}>
               {' '}
-              TailwindCSS and NextJS
+              TailwindCSS and Next.js
             </span>{' '}
             .
           </div>
