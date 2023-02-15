@@ -47,6 +47,7 @@ export default function Home() {
       <motion.main className="homepage px-9 py-7 grid grid-cols-2 auto-rows-auto justify-center">
         <div className="first homeDiv fst">
           <h2 className="font-[arial] text-4xl font-normal mb-2 z-10 md:text-3xl sm:text-2xl">
+            {/* <h2 className="text-4xl font-normal mb-2 z-10 md:text-3xl sm:text-2xl"> */}
             <span
               className={`highlight highlightheading whitespace-nowrap`}
               id={`${colors}`}
@@ -87,13 +88,13 @@ export default function Home() {
                       From zero to web development: my coding journey
                     </h4>
                   </div>
-                  <div className="ml-9 text-color">January 29, 2023 - 5min</div>
+                  <div className="ml-9 text-color">Jan 29, 2023 - 5min</div>
                   {/* </a> */}
                 </a>
               </Link>
             </div>
             <div className="w-full py-3 cursor blog transform hover:scale-[1.01] transition-all">
-              <Link href={`/blog/sendy`}>
+              <Link href={`/blog/javascript`}>
                 {/* <a target="_blank"> */}
                 <a>
                   <div className="flex">
@@ -102,7 +103,7 @@ export default function Home() {
                       JavaScript: A high-level programming language
                     </h4>
                   </div>
-                  <div className="ml-9 text-color">January 2, 2023 - 8min</div>
+                  <div className="ml-9 text-color">Jan 2, 2023 - 8min</div>
                   {/* </a> */}
                 </a>
               </Link>

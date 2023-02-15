@@ -27,8 +27,9 @@ html,
 body {
   padding: 0;
   margin: 0;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-  Helvetica Neue, Arial, sans-serif;
+  Helvetica Neue, Arial, sans-serif; 
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
@@ -134,7 +135,8 @@ a {
   }
 
   .colorsdiv {
-    left: calc(76% - 58px);
+    left: calc(100px - 150px);
+    top: 3.5rem;
   }
 
   .theme-primary {
@@ -242,7 +244,9 @@ a {
       /* width: 100%; */
     }
 
-
+    .colorsdiv{
+      left: calc(100px - 160px)
+    }
   }
 
   @media only screen and (max-width: 640px) {
@@ -293,7 +297,8 @@ a {
     .colorsdiv {
       padding-top: 0px;
       height: auto;
-      left: calc(45% - 70px);
+      left: calc(-12rem);
+      top: 0;
     }
 
     .colorsbar {
@@ -334,7 +339,7 @@ a {
     }
   }
 
-  @media (max-width: 300px) {
+  @media (max-width: 320px) {
     .highlightheading {
       position: relative;
       white-space: normal;

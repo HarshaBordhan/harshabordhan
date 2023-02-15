@@ -27,8 +27,7 @@ export default function Blog({ posts }) {
             <p>
               I am interested in writing about a variety of topics, particularly
               web development and edtech. In this blog page, you can read blog
-              posts and check out the webpages below. Thank you for your
-              interest!
+              posts below. Thank you for your interest!
             </p>
           </div>
           <div className="second homeDiv fst">
@@ -50,7 +49,7 @@ export default function Blog({ posts }) {
                         {post.frontmatter.description}
                       </div>
                     </div>
-                    <div className="post-time text-color md:pl-9">
+                    <div className="post-time text-color text-right md:pl-9">
                       {post.frontmatter.date} - {post.frontmatter.duration}
                     </div>
                   </div>
@@ -103,9 +102,9 @@ export default function Blog({ posts }) {
                       <h4 className="text-xl font-medium mb-3">
                         {post.frontmatter.title}
                       </h4>
-                      <p className="text-base mb-1 text-gray-600 dark:text-gray-300">
+                      {/* <p className="text-base mb-1 text-gray-600 dark:text-gray-300">
                         {post.frontmatter.description}
-                      </p>
+                      </p> */}
                       <div className="text-sm text-color">
                         <span>{post.frontmatter.date}</span> -{' '}
                         <span>{post.frontmatter.duration}</span>

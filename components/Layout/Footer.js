@@ -97,9 +97,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer-last-content flex mt-10 justify-between items-center">
+        <div className="footer-last-content flex mt-10 justify-between items-center text-sm">
           <p className="text-center text-color">
-            Built on my own - &copy; 2023
+            Built with inspiration - &copy; 2023
           </p>
           <p className="text-center text-color">@harshabordhan</p>
         </div>

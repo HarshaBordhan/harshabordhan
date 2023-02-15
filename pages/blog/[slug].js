@@ -23,9 +23,9 @@ const PostPage = ({ frontmatter, mdxSource }) => {
         <main className="px-9 py-7">
           <div className="first homeDiv fst">
             <h3 className="text-3xl font-semibold mb-10 z-10 md:text-3xl">
-              <span className="highlight" id={`${colors}`}>
-                {frontmatter.title}
-              </span>
+              {/* <span className="highlight" id={`${colors}`}> */}
+              {frontmatter.title}
+              {/* </span> */}
             </h3>
           </div>
 

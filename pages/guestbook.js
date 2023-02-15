@@ -63,7 +63,7 @@ export default function Guestbook({ fallbackData }) {
             {session?.user && status === 'authenticated' ? (
               <>
                 <h3 className="text-2xl font-light text-stone-600 dark:text-stone-300 mb-2">
-                  Hey, {session.user.name.split(' ')[0]}
+                  Hey {session.user.name.split(' ')[0]}
                 </h3>
                 {/* <p className="text-lg font-light">Write something</p> */}
                 {/* <p className="text-lg font-light">Give a message</p> */}

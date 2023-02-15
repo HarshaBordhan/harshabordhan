@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import useSound from 'use-sound';
+import useOnclickOutside from 'react-cool-onclickoutside';
+// import soundTrack from '../../sounds/converted/clickOne.mp3';
 
 export default function Header({ color, colorTheme }) {
   const { theme, setTheme } = useTheme();
@@ -10,6 +13,19 @@ export default function Header({ color, colorTheme }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isShow, setIsShow] = useState(false);
   const router = useRouter();
+
+  const handleColor = () => {
+    setIsShow(!isShow);
+  };
+
+  const closeColor = () => {
+    setIsShow(false);
+  };
+
+  const ref = useOnclickOutside(() => closeColor());
+
+  const [play] = useSound('/sounds/clickThree.wav');
+  const [boop] = useSound('/sounds/clickFour.wav');
 
   useEffect(() => {
     const currentColor = localStorage.getItem('theme-color');
@@ -89,7 +105,7 @@ export default function Header({ color, colorTheme }) {
               </div>
             </button>
             <label className="leftside">
-              <ul className="navul w-full flex justify-start gap-8 items-center">
+              <ul className="navul w-full flex justify-start gap-8 items-center text-sm">
                 <li className="nav-items">
                   <Link href="/">
                     <a
@@ -138,13 +154,11 @@ export default function Header({ color, colorTheme }) {
             </label>
             <div className="rightside w-1/6 flex justify-between items-center">
               {/* md:w-1/5 sm:w-1/4 */}
-              <div className="colorsbar">
+              <div className="colorsbar relative" ref={ref}>
                 <span
                   className="cursor"
                   title="Choose Highlight Color"
-                  onClick={() => {
-                    setIsShow(!isShow);
-                  }}
+                  onClick={handleColor}
                 >
                   {/* <?xml version="1.0" encoding="iso-8859-1"?>
               <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> */}
@@ -202,7 +216,7 @@ export default function Header({ color, colorTheme }) {
                     <g></g>
                   </svg>
                 </span>
-                <div className="colorsdiv h-20 absolute pt-14">
+                <div className="colorsdiv h-20 absolute">
                   {isShow ? (
                     <span
                       className="flex flex-row m-0"
@@ -214,7 +228,10 @@ export default function Header({ color, colorTheme }) {
                             ? 'activeColor'
                             : ''
                         } color bg-current`}
-                        onClick={() => handleClick('theme-current')}
+                        onClick={() => {
+                          handleClick('theme-current');
+                          boop();
+                        }}
                       ></div>
                       <div
                         className={`${
@@ -222,7 +239,10 @@ export default function Header({ color, colorTheme }) {
                             ? 'activeColor'
                             : ''
                         } color theme-primary`}
-                        onClick={() => handleClick('theme-primary')}
+                        onClick={() => {
+                          handleClick('theme-primary');
+                          boop();
+                        }}
                       ></div>
                       <div
                         className={`${
@@ -230,7 +250,10 @@ export default function Header({ color, colorTheme }) {
                             ? 'activeColor'
                             : ''
                         } color theme-secondary`}
-                        onClick={() => handleClick('theme-secondary')}
+                        onClick={() => {
+                          handleClick('theme-secondary');
+                          boop();
+                        }}
                       ></div>
                       <div
                         className={`${
@@ -238,7 +261,10 @@ export default function Header({ color, colorTheme }) {
                             ? 'activeColor'
                             : ''
                         } color theme-tertiary`}
-                        onClick={() => handleClick('theme-tertiary')}
+                        onClick={() => {
+                          handleClick('theme-tertiary');
+                          boop();
+                        }}
                       ></div>
                       <div
                         className={`${
@@ -246,7 +272,10 @@ export default function Header({ color, colorTheme }) {
                             ? 'activeColor'
                             : ''
                         } color theme-transparent`}
-                        onClick={() => handleClick('theme-transparent')}
+                        onClick={() => {
+                          handleClick('theme-transparent');
+                          boop();
+                        }}
                       ></div>
                     </span>
                   ) : (
@@ -258,7 +287,10 @@ export default function Header({ color, colorTheme }) {
                 aria-label="Toggle Mode"
                 type="button"
                 className="w-8 h-8 p-1 rounded-md hover:ring-2 hover:ring-gray-300 transition-all"
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                onClick={() => {
+                  setTheme(theme === 'light' ? 'dark' : 'light');
+                  play();
+                }}
               >
                 {mounted &&
                   (theme === 'light' ? (
