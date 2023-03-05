@@ -56,6 +56,7 @@ export default function Home() {
             </span>
           </h2>
           <h3 className="font-normal mb-6">
+            {/* Front-end web developer, artist(sketch artist) and creator. */}
             Front-end web developer, artist and creator.
           </h3>
           <p className="mb-1.5">
