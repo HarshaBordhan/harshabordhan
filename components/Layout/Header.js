@@ -288,7 +288,7 @@ export default function Header({ color, colorTheme }) {
                 type="button"
                 className="w-8 h-8 p-1 rounded-md hover:ring-2 hover:ring-gray-300 transition-all"
                 onClick={() => {
-                  setTheme(theme === 'light' ? 'dark' : 'light');
+                  setTheme(theme === 'dark' ? 'light' : 'dark');
                   play();
                 }}
               >
