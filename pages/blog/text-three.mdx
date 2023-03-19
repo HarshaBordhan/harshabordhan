@@ -1,0 +1,18 @@
+export const meta = {
+title: 'Something unknown',
+excerpt: 'An unknown title about something....',
+author: 'Unexpected unknown person',
+};
+
+# The third blog post
+
+## {meta.title}
+
+<div className="text-red-400">Hello JSX</div>
+<div className="text-cyan-400">The holly</div>
+
+export default ({ children }) => (
+  <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+    {children}
+  </article>
+);

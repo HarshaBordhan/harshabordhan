@@ -1,5 +1,5 @@
 import Hello from '../../components/MDXContent/Hello';
-
+export const year = 2023;
 export const LocalComponent = () => <div>This is a local component</div>;
 
 ## This is a mdx page
@@ -13,7 +13,8 @@ This is list
 
 <div>{Math.floor(3.14)}</div>
 
-<div className="text-[red]">Hello JSX</div>
+<div className="text-red-400">Hello JSX</div>
+<div className="text-cyan-400">{year}</div>
 
 <LocalComponent />
 
