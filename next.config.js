@@ -7,7 +7,7 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
-    providerImportSource: '@mdx-js/react',
+    // providerImportSource: '@mdx-js/react',
   },
 });
 
@@ -22,3 +22,13 @@ const nextConfig = {
 
 // Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig);
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+// };
+
+// module.exports = nextConfig;
+
+// next.config.js;
