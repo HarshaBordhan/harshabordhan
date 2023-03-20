@@ -40,7 +40,11 @@ const PostPage = ({ frontmatter, mdxSource }) => {
             priority={true}
           />
           <br />
-          <MDXRemote {...mdxSource} components={components} />
+          <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+            <section>
+              <MDXRemote {...mdxSource} components={components} />
+            </section>
+          </article>
         </main>
         <Footer />
       </Layout>
