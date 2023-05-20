@@ -178,16 +178,10 @@ export default function Home() {
             PIECE&#34;
           </p>
         </div>
-        <div className="fifth homeDiv col-start-1 col-end-2 sm:col-span-full sm:items-center">
+        {/* <div className="fifth homeDiv col-start-1 col-end-2 sm:col-span-full sm:items-center">
           <div className="flex items-center mb-6">
             <span className="w-6 h-6 mr-2 flex items-center">
-              {/* <Image
-                className="strawhat"
-                src={SH}
-                alt="OP Logo"
-                width={32}
-                height={20}
-              />  */}
+              .....
               <Image
                 className="strawhatlogo"
                 src={SHlogo}
@@ -209,7 +203,7 @@ export default function Home() {
           <div className="w-full sm:w-1/2">
             <Image src={RED} alt="OP film Logo" />
           </div>
-        </div>
+        </div> */}
         {/* <div className="sixth homeDiv col-start-2 col-end-3 justify-center items-center sm:col-span-full">
           <div className="w-52 h-72 relative">
             {images.map((img, ind) => {
@@ -233,6 +227,17 @@ export default function Home() {
     </Layout>
   );
 }
+
+{
+  /* <Image
+                className="strawhat"
+                src={SH}
+                alt="OP Logo"
+                width={32}
+                height={20}
+              />  */
+}
+
 {
   /* <Image
               src={images[index]}
