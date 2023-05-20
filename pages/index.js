@@ -233,4 +233,12 @@ export default function Home() {
     </Layout>
   );
 }
-
+{
+  /* <Image
+              src={images[index]}
+              alt="OP Poster"
+              width={265}
+              height={376}
+              className={index >= 0 ? `${`fade-anim`}` : ''}
+            /> */
+}
