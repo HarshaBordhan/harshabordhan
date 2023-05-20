@@ -210,7 +210,7 @@ export default function Home() {
             <Image src={RED} alt="OP film Logo" />
           </div>
         </div>
-        <div className="sixth homeDiv col-start-2 col-end-3 justify-center items-center sm:col-span-full">
+        {/* <div className="sixth homeDiv col-start-2 col-end-3 justify-center items-center sm:col-span-full">
           <div className="w-52 h-72 relative">
             {images.map((img, ind) => {
               return (
@@ -225,17 +225,12 @@ export default function Home() {
                 </div>
               );
             })}
-            {/* <Image
-              src={images[index]}
-              alt="OP Poster"
-              width={265}
-              height={376}
-              className={index >= 0 ? `${`fade-anim`}` : ''}
-            /> */}
+            ....
           </div>
-        </div>
+        </div> */}
       </motion.main>
       <Footer />
     </Layout>
   );
 }
+
