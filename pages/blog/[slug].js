@@ -20,12 +20,15 @@ const PostPage = ({ frontmatter, mdxSource }) => {
     <>
       <Layout>
         <Header color={setColor} colorTheme={colors} />
-        <main className="px-9 py-7 font-semibold text-xl">
-          <h3 className="text-3xl font-semibold mb-10 z-10 md:text-3xl">
-            <span className="highlight" id={`${colors}`}>
+        <main className="px-9 py-7">
+          <div className="first homeDiv fst">
+            <h3 className="text-3xl font-semibold mb-10 z-10 md:text-3xl">
+              {/* <span className="highlight" id={`${colors}`}> */}
               {frontmatter.title}
-            </span>
-          </h3>
+              {/* </span> */}
+            </h3>
+          </div>
+
           <Image
             src={frontmatter.thumbnailUrl}
             alt={frontmatter.alter}
@@ -34,9 +37,14 @@ const PostPage = ({ frontmatter, mdxSource }) => {
             className="rounded-lg"
             objectFit="contain"
             layout="responsive"
+            priority={true}
           />
           <br />
-          <MDXRemote {...mdxSource} components={components} />
+          <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+            <section>
+              <MDXRemote {...mdxSource} components={components} />
+            </section>
+          </article>
         </main>
         <Footer />
       </Layout>
@@ -49,7 +57,7 @@ const getStaticPaths = async () => {
 
   const paths = files.map(filename => ({
     params: {
-      slug: filename.replace('.mdx', ''),
+      slug: filename.replace(/\.mdx?$/, ''),
     },
   }));
 

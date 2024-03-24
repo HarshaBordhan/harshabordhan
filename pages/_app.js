@@ -1,11 +1,19 @@
 import '../styles/globals.css';
 import { ThemeProvider } from 'next-themes';
+import { SessionProvider } from 'next-auth/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-function MyApp({ Component, pageProps }) {
+const queryClient = new QueryClient();
+
+function MyApp({ Component, pageProps, session }) {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <SessionProvider session={session}>
+        <ThemeProvider attribute="class">
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </SessionProvider>
+    </QueryClientProvider>
   );
 }
 
