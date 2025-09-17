@@ -2,7 +2,7 @@
 
 import Container from "@/components/container/Container";
 import Link from "next/link";
-import { FramerButton } from "@/components/buttons/FramerButton";
+import { FramerButton } from "@/components/FramerButton";
 import { useEffect, useState } from "react";
 import { Button } from "./reusable/button";
 import { Download } from "lucide-react";
