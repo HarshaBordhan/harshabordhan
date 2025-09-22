@@ -22,7 +22,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", () => handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -31,12 +31,12 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-        ${isScrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"}
+        ${isScrolled ? "bg-background/90 backdrop-blur-lg" : "bg-transparent"}
       `}
     >
       <Container>
         <div>
-          <div className="flex justify-between items-center py-7">
+          <div className="flex justify-between items-center py-6">
             <div className="text-lg cursor-pointer hover:text-muted-foreground duration-200">
               HarshaDev
             </div>

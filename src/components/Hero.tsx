@@ -23,21 +23,21 @@ export default function Hero() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="hover:text-primary"
+                  className="hover:text-primary cursor-pointer"
                 >
                   <Github className="w-5 h-5" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="hover:text-primary"
+                  className="hover:text-primary cursor-pointer"
                 >
                   <Linkedin className="w-5 h-5" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="hover:text-primary"
+                  className="hover:text-primary cursor-pointer"
                 >
                   <Mail className="w-5 h-5" />
                 </Button>
@@ -50,7 +50,7 @@ export default function Hero() {
               </Link>
 
               <span className="text-muted-foreground">Scroll to explore</span>
-              <div className="absolute -bottom-[108%]">
+              <div className="absolute -bottom-[150%]">
                 <Button
                   className="w-10 h-10 rounded-full border border-border cursor-pointer hover:bg-muted transition-all duration-300 animate-bounce"
                   variant="ghost"
