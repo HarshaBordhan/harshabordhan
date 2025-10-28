@@ -24,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section>
+    <section id="about" className="scroll-my-32">
       <Container>
         <div className="grid grid-cols-2 gap-16 items-start">
           <div className="space-y-8">

@@ -1,7 +1,6 @@
 "use client";
 
 import Container from "@/components/container/Container";
-import Link from "next/link";
 import { FramerButton } from "@/components/FramerButton";
 import { useEffect, useState } from "react";
 import { Button } from "./reusable/button";
@@ -28,6 +27,15 @@ export default function Navbar() {
     };
   }, []);
 
+  const setionScrolled = (href: string) => {
+    const element = document.querySelector(href);
+    console.log(element);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -42,11 +50,11 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-6">
               {navItems.map((item) => (
-                <Link href={item.href} key={item.href}>
+                <div key={item.href} onClick={() => setionScrolled(item.href)}>
                   <FramerButton className="cursor-pointer font-dm-sans">
                     {item.label}
                   </FramerButton>
-                </Link>
+                </div>
               ))}
               <Button
                 variant="outline"
