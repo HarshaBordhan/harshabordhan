@@ -13,6 +13,12 @@ export default function Hero() {
     }
   };
 
+  const socialButtons = [
+    { icon: Github, href: "https://github.com/HarshaBordhan" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/harsha-bordhan" },
+    { icon: Mail, href: "mailto:harshabordhanc@gmail.com" },
+  ];
+
   return (
     <section className="min-h-[80vh] sm:min-h-screen flex justify-center items-center">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-10">
@@ -32,34 +38,36 @@ export default function Hero() {
               </div>
 
               <div className="flex gap-4">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary cursor-pointer"
-                >
-                  <Github className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary cursor-pointer"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary cursor-pointer"
-                >
-                  <Mail className="w-5 h-5" />
-                </Button>
+                {socialButtons.map((button, index) => {
+                  const Icon = button.icon;
+
+                  return (
+                    <Link
+                      key={index}
+                      href={button.href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="hover:text-primary cursor-pointer"
+                      >
+                        <Icon className="w-5 h-5" />
+                      </Button>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
             <div className="absolute max-[768px]:left-0 right-0 bottom-[-80%] sm:bottom-[-40%]">
               <div className="flex flex-col items-start sm:items-end gap-1 font-dm-sans relative">
-                <Link href="" className="font-medium">
-                  harsha3dev@gmail.com
+                <Link
+                  href="mailto:harshabordhanc@gmail.com"
+                  className="font-medium"
+                >
+                  harsh@bordhan.dev
                 </Link>
 
                 <span className="text-muted-foreground">Scroll to explore</span>

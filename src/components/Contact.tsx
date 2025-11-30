@@ -9,19 +9,19 @@ export default function Contact() {
     {
       name: "GitHub",
       icon: Github,
-      href: "",
+      href: "https://github.com/HarshaBordhan",
       description: "View my code and projects",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "",
+      href: "https://www.linkedin.com/in/harsha-bordhan",
       description: "Connect professionally",
     },
     {
       name: "Twitter",
       icon: FaXTwitter,
-      href: "",
+      href: "https://twitter.com/harsha-bordhan",
       description: "Get in touch via tweets",
     },
   ];
@@ -73,10 +73,12 @@ export default function Contact() {
           </div>
 
           <div className="">
-            <Button size="lg" className="gap-2 cursor-pointer">
-              <Mail className="w-5 h-5" />
-              Start a conversation
-            </Button>
+            <Link href="mailto:harshabordhanc@gmail.com">
+              <Button size="lg" className="gap-2 cursor-pointer">
+                <Mail className="w-5 h-5" />
+                Start a conversation
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
