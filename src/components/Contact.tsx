@@ -28,7 +28,7 @@ export default function Contact() {
 
   return (
     <section
-      className="py-16 scroll-my-16 sm:py-24 sm:scroll-my-8"
+      className="py-16 scroll-my-16 md:py-24 md:scroll-my-8"
       id="contact"
     >
       <Container>

@@ -26,7 +26,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scroll-my-8 pt-24 pb-16 sm:scroll-my-32 sm:pt-0 sm:pb-24"
+      className="scroll-my-8 pt-24 pb-16 sm:scroll-my-32 sm:pt-0 md:pb-24"
     >
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-start">

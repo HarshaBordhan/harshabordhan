@@ -29,11 +29,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="">
+    <footer>
       <div className="flex flex-col">
         <Container>
-          <div className="grid grid-cols-4 gap-16 py-16">
-            <div className="col-span-2 space-y-2">
+          <div className="grid md:grid-cols-4 gap-16 py-16">
+            <div className="min-[480px]:col-span-2 space-y-2">
               <h3 className="text-xl font-medium">
                 Building efficient frontend solutions
               </h3>

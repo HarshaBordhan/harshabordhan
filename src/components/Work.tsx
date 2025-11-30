@@ -46,7 +46,7 @@ export default function Work() {
 
   return (
     <section
-      className="scroll-my-16 py-16 sm:py-24 sm:scroll-my-8"
+      className="scroll-my-16 py-16 md:py-24 md:scroll-my-8"
       id="projects"
     >
       <Container>
