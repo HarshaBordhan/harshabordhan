@@ -50,7 +50,11 @@ export default function Navbar() {
             </div>
             <div className="flex items-center gap-6">
               {navItems.map((item) => (
-                <div key={item.href} onClick={() => setionScrolled(item.href)}>
+                <div
+                  key={item.href}
+                  onClick={() => setionScrolled(item.href)}
+                  className="hidden md:block"
+                >
                   <FramerButton className="cursor-pointer font-dm-sans">
                     {item.label}
                   </FramerButton>

@@ -24,15 +24,18 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="scroll-my-32">
+    <section
+      id="about"
+      className="scroll-my-8 pt-24 pb-16 sm:scroll-my-32 sm:pt-0 sm:pb-24"
+    >
       <Container>
-        <div className="grid grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-xl font-normal">About</h3>
               <p className="text-muted-foreground">
                 I'm a frontend developer with a passion for creating exceptional
-                user experiences. With 3+ years of experience in modern web
+                user experiences. With 2+ years of experience in modern web
                 development, I specialize in building responsive, accessible
                 applications using React and TypeScript.
               </p>

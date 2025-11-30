@@ -27,7 +27,10 @@ export default function Contact() {
   ];
 
   return (
-    <section className="py-24 scroll-my-8" id="contact">
+    <section
+      className="py-16 scroll-my-16 sm:py-24 sm:scroll-my-8"
+      id="contact"
+    >
       <Container>
         <div className="text-center space-y-16">
           <div className="space-y-4">
