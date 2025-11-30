@@ -143,9 +143,9 @@ const ProjectButtons = ({ href, label }: { href?: string; label: string }) => {
   return (
     <Link href={href} target="_blank" rel="noopener noreferrer">
       <Button
-        variant="default"
+        variant="outline"
         size="default"
-        className="py-3 border border-border hover:bg-primary/8 bg-transparent text-white font-dm-sans cursor-pointer"
+        className="py-3 font-dm-sans cursor-pointer"
       >
         {label}
       </Button>
