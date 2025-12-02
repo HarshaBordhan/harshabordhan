@@ -33,6 +33,7 @@ export default function Hero() {
                   Harsha Bordhan
                   {/* Developed by Harsha */}
                   {/* Harsha Development */}
+                  {/* Code writer */}
                 </h2>
                 <p className="max-w-[500px] text-lg font-medium font-dm-sans whitespace-pre-wrap break-words text-center sm:text-left">
                   Creating fast, flexible, and effective frontend solutions that
