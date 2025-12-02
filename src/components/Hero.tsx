@@ -20,7 +20,10 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-[80vh] sm:min-h-screen flex justify-center items-center">
+    <section
+      className="min-h-[80vh] sm:min-h-screen flex justify-center items-center"
+      id="hero"
+    >
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-10">
         <div>
           <div className="h-full relative">

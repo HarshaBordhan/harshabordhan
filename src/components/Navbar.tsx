@@ -45,7 +45,10 @@ export default function Navbar() {
       <Container>
         <div>
           <div className="flex justify-between items-center py-6">
-            <div className="text-lg cursor-pointer hover:text-muted-foreground duration-200">
+            <div
+              className="text-lg cursor-pointer hover:text-muted-foreground duration-200"
+              onClick={() => setionScrolled("#hero")}
+            >
               HarshaDev
             </div>
             <div className="flex items-center gap-6">
