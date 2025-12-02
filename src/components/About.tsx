@@ -34,10 +34,10 @@ export default function About() {
             <div className="space-y-4">
               <h3 className="text-xl font-normal">About</h3>
               <p className="text-muted-foreground">
-                I'm a frontend developer with a passion for creating exceptional
-                user experiences. With 2+ years of experience in modern web
-                development, I specialize in building responsive, accessible
-                applications using React and TypeScript.
+                I&apos;m a frontend developer with a passion for creating
+                exceptional user experiences. With 2+ years of experience in
+                modern web development, I specialize in building responsive,
+                accessible applications using React and TypeScript.
               </p>
             </div>
             <div className="space-y-4">

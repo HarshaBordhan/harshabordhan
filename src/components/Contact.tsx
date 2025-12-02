@@ -36,9 +36,9 @@ export default function Contact() {
           <div className="space-y-4">
             <h3 className="text-2xl ">Get In Touch</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I'm always interested in new opportunities and collaborations.
-              Whether you have a project in mind or just want to say hello, feel
-              free to reach out.
+              I&apos;m always interested in new opportunities and
+              collaborations. Whether you have a project in mind or just want to
+              say hello, feel free to reach out.
             </p>
           </div>
 
