@@ -75,7 +75,7 @@ export default function Hero() {
                 </Link>
 
                 <span className="text-muted-foreground">Scroll to explore</span>
-                <div className="absolute -bottom-[110%] sm:-bottom-[140%]">
+                <div className="absolute hidden sm:block -bottom-[140%]">
                   <Button
                     className="w-10 h-10 rounded-full border border-border cursor-pointer hover:bg-muted transition-all duration-300 animate-bounce"
                     variant="ghost"
