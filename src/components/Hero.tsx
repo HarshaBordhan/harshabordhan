@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section id="hero">
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-10">
-        <div className="h-full relative min-h-[500px] flex flex-col justify-center sm:justify-end items-start flex-nowrap mb-0 sm:mb-24">
+        <div className="h-full relative min-h-[500px] flex flex-col justify-center sm:justify-end items-center sm:items-start flex-nowrap mb-0 sm:mb-24">
           <div className="flex flex-col items-center sm:items-start gap-10">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-6xl lg:text-[80px] font-medium font-dm-sans whitespace-pre-wrap wrap-break-word text-center sm:text-left">
