@@ -25,13 +25,13 @@ export default function Hero() {
         <div className="h-full relative min-h-[500px] flex flex-col justify-center sm:justify-end items-start flex-nowrap mb-0 sm:mb-24">
           <div className="flex flex-col items-center sm:items-start gap-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-medium font-dm-sans whitespace-pre-wrap wrap-break-word text-center sm:text-left">
+              <h2 className="text-4xl md:text-6xl lg:text-[80px] font-medium font-dm-sans whitespace-pre-wrap wrap-break-word text-center sm:text-left">
                 Harsha Bordhan
                 {/* Developed by Harsha */}
                 {/* Harsha Development */}
                 {/* Code writer */}
               </h2>
-              <p className="max-w-[500px] text-lg font-medium font-dm-sans whitespace-pre-wrap break-words text-center sm:text-left">
+              <p className="max-w-[450px] text-lg font-medium text-neutral-400 font-dm-sans whitespace-pre-wrap break-words text-center sm:text-left">
                 Creating fast, flexible, and effective frontend solutions that
                 fit effortlessly into your established systems
               </p>
