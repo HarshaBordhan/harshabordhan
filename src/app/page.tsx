@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import { HeroWrapper } from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen w-auto font-inter">
       <Navbar />
       <main className="flex flex-col gap-32 sm:gap-48">
-        <Hero />
+        <HeroWrapper />
         <About />
         <Work />
         <Contact />

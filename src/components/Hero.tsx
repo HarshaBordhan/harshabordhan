@@ -1,10 +1,11 @@
 "use client";
 
 import { ArrowDown, Mail, Linkedin, Github } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "./reusable/button";
 import Link from "next/link";
 
-export default function Hero() {
+const Hero = () => {
   const scrollProjects = () => {
     const element = document.querySelector("#projects");
 
@@ -87,4 +88,14 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+};
+
+export const HeroWrapper = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <div className="min-h-screen" />;
+
+  return <Hero />;
+};
