@@ -29,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer>
+    <footer className="mt-24">
       <div className="flex flex-col">
         <Container>
           <div className="grid md:grid-cols-4 gap-16 py-16">

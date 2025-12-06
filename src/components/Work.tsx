@@ -45,10 +45,7 @@ export default function Work() {
   ];
 
   return (
-    <section
-      className="scroll-my-16 py-16 md:py-24 md:scroll-my-8"
-      id="projects"
-    >
+    <section className="scroll-my-32" id="projects">
       <Container>
         <div className="space-y-16">
           <div className="space-y-4">

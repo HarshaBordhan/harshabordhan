@@ -24,10 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section
-      id="about"
-      className="scroll-my-8 pt-24 pb-16 sm:scroll-my-32 sm:pt-0 md:pb-24"
-    >
+    <section id="about" className="scroll-my-32">
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">

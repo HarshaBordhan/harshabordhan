@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-auto font-inter">
       <Navbar />
-      <main>
+      <main className="flex flex-col gap-32 sm:gap-48">
         <Hero />
         <About />
         <Work />
