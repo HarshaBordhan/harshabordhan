@@ -39,7 +39,7 @@ export default function Work() {
       description:
         "A rapid branding service that creates a bold, memorable identity.",
       image: "www.quickbrand.work_.png",
-      preview: "https://quickbrand.work",
+      preview: "https://quick-brand.vercel.app",
       category: ["Brand", "Logo"],
     },
   ];

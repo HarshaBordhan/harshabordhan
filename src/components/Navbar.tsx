@@ -4,7 +4,10 @@ import Container from "@/components/container/Container";
 import { FramerButton } from "@/components/FramerButton";
 import { useEffect, useState } from "react";
 import { Button } from "./reusable/button";
-import { Download } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import { IconContext } from "react-icons";
+import Link from "next/link";
+// import { Download } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,14 +66,28 @@ export default function Navbar() {
                   </FramerButton>
                 </div>
               ))}
-              <Button
+
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="self-start gap-2 cursor-pointer"
               >
                 <Download size={5} />
                 Download CV
-              </Button>
+              </Button> */}
+
+              <Link href="https://wa.me/01925140167" target="_blank">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="self-start gap-2 cursor-pointer"
+                >
+                  <IconContext.Provider value={{ size: "20px" }}>
+                    <FaWhatsapp />
+                  </IconContext.Provider>
+                  Whatsapp
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
